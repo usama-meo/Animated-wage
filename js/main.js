@@ -414,6 +414,12 @@
       img.src = screenDataURL(i, $('.app-card__name', card).textContent.trim());
       loadReal(img);
     });
+    // tool previews aren't recorded yet — the video quietly hides and the
+    // generative sketch underneath keeps showing until one lands at data-src
+    $$('.lab-reel__video').forEach((v) => {
+      v.addEventListener('error', () => { v.hidden = true; }, { once: true });
+      v.src = v.dataset.src;
+    });
   }
 
   /* ------------------------------------------------------------------
@@ -560,6 +566,42 @@
           aa.classList.remove('swap'); void aa.offsetWidth; aa.classList.add('swap');
         }, 1400);
       }, { rootMargin: '80px' }).observe(aa);
+    }
+
+    // The reel: pinned for the section's scroll length, cards slide over
+    // one another one at a time — same rect-driven pin as the hero.
+    const reel = $('#lab-reel');
+    const stage = $('.lab-reel__stage', reel || document);
+    const cards = reel ? $$('.lab-reel__card', reel) : [];
+    if (reel && stage && cards.length && !reduced) {
+      const n = cards.length;
+      const HOLD = 0.62; // share of each card's band spent settled before the next slides over it
+      const fill = $('#lab-reel-fill');
+      const counter = $('#lab-reel-current');
+      let raf = 0;
+      const loop = () => {
+        raf = requestAnimationFrame(loop);
+        const rect = reel.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > innerHeight) return;
+        const total = rect.height - stage.clientHeight;
+        const p = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
+        cards.forEach((card, i) => {
+          if (i === 0) return;
+          const local = clamp(p * n - (i - 1), 0, 1);
+          const eased = smooth(local, HOLD, 1);
+          card.style.transform = `translateX(${((1 - eased) * 100).toFixed(2)}%)`;
+        });
+        if (fill) fill.style.width = `${(p * 100).toFixed(1)}%`;
+        const active = String(Math.min(n, Math.floor(p * n) + 1)).padStart(2, '0');
+        if (counter && counter.textContent !== active) counter.textContent = active;
+      };
+      raf = requestAnimationFrame(loop);
+    }
+
+    const previews = reel ? $$('.lab-reel__video', reel) : [];
+    if (previews.length && !reduced) {
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.play().catch(() => {}); else e.target.pause(); }), { rootMargin: '120px' });
+      previews.forEach((v) => io.observe(v));
     }
   }
 

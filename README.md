@@ -54,6 +54,7 @@ Every image starts as generated placeholder art. Drop real files at these
 paths and the page picks them up automatically, no code change needed:
 
 - Module previews: `assets/work/01.mp4` … `06.mp4` recordings with `01.jpg` … `06.jpg` posters (see below)
+- Tool previews: `assets/tools/01.mp4` … `04.mp4` (paystub, form finder, pay planner, tax rates, in that order). Until a clip exists there the card keeps showing its generative sketch — a missing file just hides the `<video>`.
 
 ### Recording the module flows
 

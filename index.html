@@ -300,58 +300,225 @@
             </div>
             <p class="lab__desc">small calculators we built to answer the questions clients ask in meetings. free, in the browser, no sign-up. the same math that runs your payroll.</p>
           </div>
+        </div>
 
-          <p class="eyebrow lab__label">specimens</p>
-          <div class="lab__grid">
-            <a class="lab-card group" href="#lab" data-cursor="view">
-              <span class="lab-card__top">
-                <span class="lab-card__frame"><canvas data-sketch="glyphwall" aria-hidden="true"></canvas></span>
-                <span class="eyebrow arrow" aria-hidden="true">↗</span>
-              </span>
-              <div class="lab-card__body">
-                <span class="eyebrow lab-card__num">001</span>
-                <h3 class="glitch font-display" data-glitch="Paystub">Paystub</h3>
-                <p>type a gross pay and a state and watch a full paystub build itself, taxes and all. download as pdf.</p>
-              </div>
-            </a>
-            <a class="lab-card group" href="#lab" data-cursor="view">
-              <span class="lab-card__top">
-                <span class="lab-card__frame"><span class="aa" id="pairings-aa" data-swap="1099|W-2|941|940" aria-hidden="true">1099</span></span>
-                <span class="eyebrow arrow" aria-hidden="true">↗</span>
-              </span>
-              <div class="lab-card__body">
-                <span class="eyebrow lab-card__num">002</span>
-                <h3 class="glitch font-display" data-glitch="Form finder">Form finder</h3>
-                <p>answer three questions and get the exact form you owe, its due date, and what it costs to file.</p>
-              </div>
-            </a>
-            <a class="lab-card group" href="#lab" data-cursor="view">
-              <span class="lab-card__top">
-                <span class="lab-card__frame"><canvas data-sketch="ripple" aria-hidden="true"></canvas></span>
-                <span class="eyebrow arrow" aria-hidden="true">↗</span>
-              </span>
-              <div class="lab-card__body">
-                <span class="eyebrow lab-card__num">003</span>
-                <h3 class="glitch font-display" data-glitch="Pay planner">Pay planner</h3>
-                <p>drop in a start date and a frequency and see every pay date and deposit deadline for the year.</p>
-              </div>
-            </a>
-            <a class="lab-card group" href="#lab" data-cursor="view">
-              <span class="lab-card__top">
-                <span class="lab-card__frame"><canvas data-sketch="jitter" aria-hidden="true"></canvas></span>
-                <span class="eyebrow arrow" aria-hidden="true">↗</span>
-              </span>
-              <div class="lab-card__body">
-                <span class="eyebrow lab-card__num">004</span>
-                <h3 class="glitch font-display" data-glitch="Tax rates">Tax rates</h3>
-                <p>federal, social security, medicare and every state unemployment rate, current year, in one searchable table.</p>
-              </div>
-            </a>
+        <div class="lab-reel" id="lab-reel">
+          <div class="lab-reel__stage">
+            <ul class="lab-reel__cards" id="lab-reel-cards">
+              <li class="lab-reel__card">
+                <div class="lab-reel__col">
+                  <span class="lab-reel__num font-display" aria-hidden="true">01</span>
+                  <p class="eyebrow lab-reel__tag">paystub</p>
+                  <h3 class="font-display lab-reel__title">Type a gross pay. Watch a paystub build itself.</h3>
+                  <p class="lab-reel__desc">taxes and all, calculated live — the exact math that runs production payroll, not an estimate.</p>
+                  <ul class="lab-reel__points">
+                    <li><span class="spark" aria-hidden="true">✦</span>Every federal &amp; state line</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Withholdings itemized</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Downloads as a PDF</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>No sign-up required</li>
+                  </ul>
+                </div>
+                <div class="lab-reel__visual" aria-hidden="true">
+                  <div class="browser browser--compact lab-reel__frame">
+                    <div class="browser__bar">
+                      <span class="browser__dots"><i></i><i></i><i></i></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/paystub</span></span>
+                    </div>
+                    <div class="lab-reel__screen">
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/01.mp4" aria-label="Paystub — preview"></video>
+                      <canvas data-sketch="glyphwall"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="lab-reel__card">
+                <div class="lab-reel__col">
+                  <span class="lab-reel__num font-display" aria-hidden="true">02</span>
+                  <p class="eyebrow lab-reel__tag">form finder</p>
+                  <h3 class="font-display lab-reel__title">Three questions. The exact form you owe.</h3>
+                  <p class="lab-reel__desc">no guessing which form applies, or when it's due.</p>
+                  <ul class="lab-reel__points">
+                    <li><span class="spark" aria-hidden="true">✦</span>1099, W-2, 941, 940 &amp; more</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Due date, calculated</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Filing cost, up front</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Answers in three taps</li>
+                  </ul>
+                </div>
+                <div class="lab-reel__visual" aria-hidden="true">
+                  <div class="browser browser--compact lab-reel__frame">
+                    <div class="browser__bar">
+                      <span class="browser__dots"><i></i><i></i><i></i></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/form-finder</span></span>
+                    </div>
+                    <div class="lab-reel__screen lab-reel__screen--aa">
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/02.mp4" aria-label="Form finder — preview"></video>
+                      <span class="aa" id="pairings-aa" data-swap="1099|W-2|941|940">1099</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="lab-reel__card">
+                <div class="lab-reel__col">
+                  <span class="lab-reel__num font-display" aria-hidden="true">03</span>
+                  <p class="eyebrow lab-reel__tag">pay planner</p>
+                  <h3 class="font-display lab-reel__title">Drop in a start date. Get the whole year mapped.</h3>
+                  <p class="lab-reel__desc">every pay date and deposit deadline, laid out before you commit to a schedule.</p>
+                  <ul class="lab-reel__points">
+                    <li><span class="spark" aria-hidden="true">✦</span>Weekly to monthly frequencies</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Every pay date, listed</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Deposit deadlines included</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Plan before you switch</li>
+                  </ul>
+                </div>
+                <div class="lab-reel__visual" aria-hidden="true">
+                  <div class="browser browser--compact lab-reel__frame">
+                    <div class="browser__bar">
+                      <span class="browser__dots"><i></i><i></i><i></i></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/pay-planner</span></span>
+                    </div>
+                    <div class="lab-reel__screen">
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/03.mp4" aria-label="Pay planner — preview"></video>
+                      <canvas data-sketch="ripple"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="lab-reel__card">
+                <div class="lab-reel__col">
+                  <span class="lab-reel__num font-display" aria-hidden="true">04</span>
+                  <p class="eyebrow lab-reel__tag">tax rates</p>
+                  <h3 class="font-display lab-reel__title">Every rate that touches a paycheck, one table.</h3>
+                  <p class="lab-reel__desc">federal, FICA, medicare and all 50 states' unemployment rates, current year.</p>
+                  <ul class="lab-reel__points">
+                    <li><span class="spark" aria-hidden="true">✦</span>Federal, SS &amp; medicare</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>All 50 states' SUTA</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Updated for the current year</li>
+                    <li><span class="spark" aria-hidden="true">✦</span>Searchable, no sign-up</li>
+                  </ul>
+                </div>
+                <div class="lab-reel__visual" aria-hidden="true">
+                  <div class="browser browser--compact lab-reel__frame">
+                    <div class="browser__bar">
+                      <span class="browser__dots"><i></i><i></i><i></i></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/tax-rates</span></span>
+                    </div>
+                    <div class="lab-reel__screen">
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/04.mp4" aria-label="Tax rates — preview"></video>
+                      <canvas data-sketch="jitter"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <p class="eyebrow lab-reel__count"><span id="lab-reel-current">01</span> / 04</p>
+            <div class="lab-reel__bar"><span class="lab-reel__bar-fill" id="lab-reel-fill"></span></div>
           </div>
+        </div>
 
+        <div class="lab__inner">
           <div class="lab__foot">
             <span class="eyebrow">( toys, but load-bearing: the paystub math is the production math )</span>
             <a class="eyebrow link-underline" href="#lab">the whole bench ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 Why WagePress -->
+      <section id="compare" class="compare">
+        <div class="compare__inner">
+          <div class="compare__head">
+            <p class="eyebrow section-eyebrow"><span class="idx-tag accent">05</span> — why wagepress</p>
+            <h2 class="font-display lines"><span class="line"><span>Compared to the <em>old way</em>.</span></span></h2>
+            <p class="compare__desc">spreadsheets get errors. other payroll tools get you a contract, then an upsell for every form you file. line by line, here's the difference.</p>
+          </div>
+
+          <p class="eyebrow compare__hint">swipe for more →</p>
+
+          <div class="compare__body">
+            <div class="compare__labelcol">
+              <div class="compare__spacer" aria-hidden="true">
+                <span class="compare__mark-wordmark font-display">wage<b>press</b></span>
+              </div>
+              <div class="compare__labels">
+                <div class="compare__row">Payroll runs itself</div>
+                <div class="compare__row">Time tracking built in</div>
+                <div class="compare__row">1099 / W-2 / 940 / 941 e-filing</div>
+                <div class="compare__row">Direct deposit &amp; wallet</div>
+                <div class="compare__row">State unemployment filing</div>
+                <div class="compare__row">Accountant access</div>
+                <div class="compare__row">Bulk employee import</div>
+                <div class="compare__row">Deadline reminders</div>
+                <div class="compare__row">Free calculators</div>
+                <div class="compare__row">No setup fees or contracts</div>
+              </div>
+            </div>
+
+            <div class="compare__scroll">
+              <div class="compare__plans">
+                <div class="compare__plan">
+                  <h3 class="font-display">Spread<br>sheets</h3>
+                  <span class="compare__rule" aria-hidden="true"></span>
+                  <p class="compare__sub">manual, error-prone</p>
+                </div>
+                <div class="compare__plan">
+                  <h3 class="font-display">Other<br>payroll tools</h3>
+                  <span class="compare__rule" aria-hidden="true"></span>
+                  <p class="compare__sub">a contract, then upsells</p>
+                </div>
+                <div class="compare__plan compare__plan--us">
+                  <h3 class="font-display">Wage<br>press</h3>
+                  <span class="compare__rule" aria-hidden="true"></span>
+                  <p class="compare__sub">one login, no contract</p>
+                  <a class="compare__cta" href="#services">See packages ↗</a>
+                </div>
+              </div>
+
+              <div class="compare__table">
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--note mark--free">free</span></div>
+
+                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
