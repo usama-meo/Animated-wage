@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WagePress — smart payroll, time tracking & tax filing</title>
+  <meta name="description" content="WagePress runs your payroll, tracks your team's time and e-files your 1099, W-2 and 94x forms with the IRS. One login, no setup fees, no contracts.">
+  <meta name="theme-color" content="#0b1526">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Preloader: play → lift → done -->
+  <div class="preloader" aria-hidden="true" role="presentation" data-phase="play">
+    <svg class="preloader__mark" id="preloader-mark" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An impossible triangle built from cubes"></svg>
+    <div class="preloader__meta">
+      <span class="preloader__word font-display">wage<b>press</b><sup>®</sup></span>
+      <span class="preloader__count eyebrow tabular" id="preloader-count">000</span>
+    </div>
+  </div>
+
+  <a href="#content" class="skip-link eyebrow">skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="logo font-display" href="#" aria-label="WagePress — home">wage<b>press</b><sup>®</sup></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="eyebrow" href="#work">/payroll</a>
+        <a class="eyebrow" href="#apps">/tax-filing</a>
+        <a class="eyebrow" href="#services">/packages</a>
+        <a class="eyebrow" href="#lab">/tools</a>
+        <a class="eyebrow" href="#contact">/contact</a>
+        <a class="eyebrow is-ghost" href="#instrument" aria-hidden="true" tabindex="-1">sign in ↗</a>
+      </nav>
+      <button type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="io-link-wrap">
+    <a class="eyebrow" href="https://dev-company.wagepress.com/" target="_blank" rel="noreferrer">sign in ↗</a>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+    <nav>
+      <a class="font-display" href="#work"><span class="eyebrow">01</span><span>/payroll</span></a>
+      <a class="font-display" href="#apps"><span class="eyebrow">02</span><span>/tax-filing</span></a>
+      <a class="font-display" href="#services"><span class="eyebrow">03</span><span>/packages</span></a>
+      <a class="font-display" href="#lab"><span class="eyebrow">04</span><span>/tools</span></a>
+      <a class="font-display" href="#contact"><span class="eyebrow">05</span><span>/contact</span></a>
+    </nav>
+    <a class="eyebrow mobile-menu__io" href="https://dev-company.wagepress.com/" target="_blank" rel="noreferrer">sign in ↗</a>
+    <a class="eyebrow link-underline mobile-menu__mail" href="mailto:hello@wagepress.com">hello@wagepress.com</a>
+  </div>
+
+  <div id="content">
+    <main>
+
+      <!-- Hero: the impossible object -->
+      <section class="hero group" id="hero" aria-label="WagePress — the impossible object">
+        <div class="hero__stage">
+          <div class="hero__word" aria-hidden="true">
+            <span class="font-display" id="hero-word"><b id="hero-im">PAY</b>ROLL</span>
+          </div>
+          <div class="hero__fallback" id="hero-fallback">
+            <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An impossible triangle built from cubes"></svg>
+          </div>
+          <div class="hero__veil" id="hero-veil" aria-hidden="true"></div>
+          <div class="hero__copy">
+            <h1 class="sr-only">WagePress — payroll, time tracking and tax filing usually mean three tools and a headache. Here they mean one login.</h1>
+            <p class="font-display" id="hero-copy" aria-hidden="true">
+              <span class="block">payroll, time and taxes usually mean three tools and a headache.</span>
+              <span class="unsure block">here they mean one login.</span>
+            </p>
+          </div>
+          <div class="hero__bar">
+            <span class="eyebrow hero__tag">smart payroll, time tracking &amp; tax filing</span>
+            <span class="hero__scroll">
+              <span class="eyebrow tabular" id="hero-count" aria-hidden="true">000</span>
+              <span class="eyebrow" id="hero-hint">scroll to inspect ↓</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 What it does -->
+      <section id="work" class="work">
+        <div class="work__inner">
+          <div class="work__grid">
+            <div class="work__lead">
+              <p class="eyebrow section-eyebrow"><span class="idx-tag accent">01</span> — what it does</p>
+              <h2 class="font-display lines">
+                <span class="line"><span>Payroll that <em>runs itself</em>.</span></span>
+              </h2>
+              <div class="work__preview browser browser--compact" id="work-preview" aria-hidden="true">
+                <div class="browser__bar">
+                  <span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span id="work-preview-url">dev-company.wagepress.com/payroll</span></span>
+                  <span class="rec-dot" aria-hidden="true"></span>
+                </div>
+                <div class="work__preview-screen">
+                  <video muted loop playsinline preload="auto" poster="assets/work/01.jpg" data-src="assets/work/01.mp4" data-route="/payroll" class="is-active"></video>
+                  <video muted loop playsinline preload="auto" poster="assets/work/02.jpg" data-src="assets/work/02.mp4" data-route="/user-list"></video>
+                  <video muted loop playsinline preload="auto" poster="assets/work/03.jpg" data-src="assets/work/03.mp4" data-route="/attendance-list"></video>
+                  <video muted loop playsinline preload="auto" poster="assets/work/04.jpg" data-src="assets/work/04.mp4" data-route="/forms-dashboard"></video>
+                  <video muted loop playsinline preload="auto" poster="assets/work/05.jpg" data-src="assets/work/05.mp4" data-route="/link-bank-account"></video>
+                  <video muted loop playsinline preload="auto" poster="assets/work/06.jpg" data-src="assets/work/06.mp4" data-route="/twc-filing"></video>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="work__list stagger" id="work-list">
+                <div class="stagger-item">
+                  <a class="work-item group" data-cursor="view" href="#work">
+                    <div class="work-item__row">
+                      <span class="eyebrow work-item__idx">01/</span>
+                      <span class="font-display work-item__title">Run Payroll</span>
+                      <span class="eyebrow work-item__meta">schedules / paystubs · weekly to monthly</span>
+                    </div>
+                    <div class="work-item__cover browser browser--compact"><div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/payroll</span></span><span class="rec-dot" aria-hidden="true"></span></div><video muted loop playsinline preload="auto" poster="assets/work/01.jpg" data-src="assets/work/01.mp4" aria-label="Run Payroll — preview"></video></div>
+                  </a>
+                </div>
+                <div class="stagger-item">
+                  <a class="work-item group" data-cursor="view" href="#work">
+                    <div class="work-item__row">
+                      <span class="eyebrow work-item__idx">02/</span>
+                      <span class="font-display work-item__title">Teams</span>
+                      <span class="eyebrow work-item__meta">onboarding / bulk import · W-9 &amp; I-9</span>
+                    </div>
+                    <div class="work-item__cover browser browser--compact"><div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/user-list</span></span><span class="rec-dot" aria-hidden="true"></span></div><video muted loop playsinline preload="auto" poster="assets/work/02.jpg" data-src="assets/work/02.mp4" aria-label="Teams — preview"></video></div>
+                  </a>
+                </div>
+                <div class="stagger-item">
+                  <a class="work-item group" data-cursor="view" href="#work">
+                    <div class="work-item__row">
+                      <span class="eyebrow work-item__idx">03/</span>
+                      <span class="font-display work-item__title">Time Tracking</span>
+                      <span class="eyebrow work-item__meta">projects / attendance · on-site &amp; remote</span>
+                    </div>
+                    <div class="work-item__cover browser browser--compact"><div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/attendance-list</span></span><span class="rec-dot" aria-hidden="true"></span></div><video muted loop playsinline preload="auto" poster="assets/work/03.jpg" data-src="assets/work/03.mp4" aria-label="Time Tracking — preview"></video></div>
+                  </a>
+                </div>
+                <div class="stagger-item">
+                  <a class="work-item group" data-cursor="view" href="#work">
+                    <div class="work-item__row">
+                      <span class="eyebrow work-item__idx">04/</span>
+                      <span class="font-display work-item__title">Tax Filing</span>
+                      <span class="eyebrow work-item__meta">1099 / W-2 / 94x · e-filed with the IRS</span>
+                    </div>
+                    <div class="work-item__cover browser browser--compact"><div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/forms-dashboard</span></span><span class="rec-dot" aria-hidden="true"></span></div><video muted loop playsinline preload="auto" poster="assets/work/04.jpg" data-src="assets/work/04.mp4" aria-label="Tax Filing — preview"></video></div>
+                  </a>
+                </div>
+                <div class="stagger-item">
+                  <a class="work-item group" data-cursor="view" href="#work">
+                    <div class="work-item__row">
+                      <span class="eyebrow work-item__idx">05/</span>
+                      <span class="font-display work-item__title">Wallet</span>
+                      <span class="eyebrow work-item__meta">bank linking / ACH · tax payments</span>
+                    </div>
+                    <div class="work-item__cover browser browser--compact"><div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/link-bank-account</span></span><span class="rec-dot" aria-hidden="true"></span></div><video muted loop playsinline preload="auto" poster="assets/work/05.jpg" data-src="assets/work/05.mp4" aria-label="Wallet — preview"></video></div>
+                  </a>
+                </div>
+                <div class="stagger-item">
+                  <a class="work-item group" data-cursor="view" href="#work">
+                    <div class="work-item__row">
+                      <span class="eyebrow work-item__idx">06/</span>
+                      <span class="font-display work-item__title">State Unemployment</span>
+                      <span class="eyebrow work-item__meta">quarterly wage reports · texas twc</span>
+                    </div>
+                    <div class="work-item__cover browser browser--compact"><div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/twc-filing</span></span><span class="rec-dot" aria-hidden="true"></span></div><video muted loop playsinline preload="auto" poster="assets/work/06.jpg" data-src="assets/work/06.mp4" aria-label="State Unemployment — preview"></video></div>
+                  </a>
+                </div>
+              </div>
+              <div class="work__foot">
+                <span class="eyebrow">payroll · people · time · taxes</span>
+                <span class="eyebrow">( one login, no setup fees )</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 The forms shelf -->
+      <section id="apps" class="apps">
+        <div class="apps__inner">
+          <div class="apps__head">
+            <p class="eyebrow section-eyebrow"><span class="idx-tag accent">02</span> — the forms shelf</p>
+            <a class="eyebrow link-underline" href="#instrument">every form we file →</a>
+          </div>
+          <h2 class="font-display">Every form, <em>one screen each</em>.</h2>
+          <p class="apps__desc">pick the tax year, fill the boxes, review, e-file. the ones businesses reach for most, shown on the phone.</p>
+
+          <div class="apps__shelf">
+            <div class="apps__hint"><span class="eyebrow" aria-hidden="true">swipe for more →</span></div>
+            <div class="apps__track-wrap">
+              <div class="apps__track reveal" id="apps-track">
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="1099-NEC — screen" data-src="assets/apps/1099-nec.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="1099-NEC">1099-NEC</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="1099-MISC — screen" data-src="assets/apps/1099-misc.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="1099-MISC">1099-MISC</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="W-2 — screen" data-src="assets/apps/w-2.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="W-2">W-2</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="Form 941 — screen" data-src="assets/apps/941.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="Form 941">Form 941</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="Form 940 — screen" data-src="assets/apps/940.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="Form 940">Form 940</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="1095-B — screen" data-src="assets/apps/1095-b.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="1095-B">1095-B</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="W-2PR — screen" data-src="assets/apps/w-2pr.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="W-2PR">W-2PR</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
+              </div>
+              <div class="apps__fade" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Packages -->
+      <section id="services" class="services on-paper">
+        <span class="eyebrow services__plus left" aria-hidden="true">+</span>
+        <span class="eyebrow services__plus right" aria-hidden="true">+</span>
+        <div class="services__inner">
+          <div class="bento stagger">
+            <div class="bento__intro span-8 stagger-item">
+              <p class="eyebrow"><span class="idx-tag accent">03</span> — start here</p>
+              <div>
+                <h2 class="font-display lines">
+                  <span class="line"><span>Everything payroll, <em>one price</em>.</span></span>
+                </h2>
+                <p>( the price grows with your team, nothing else. ) payroll, time tracking, tax filing and payments, built as one product, so nothing gets re-typed between systems. there are no other systems. accountants, yes; re-typing, no.</p>
+              </div>
+            </div>
+
+            <div class="bento__cell group span-4 stagger-item">
+              <span class="eyebrow num">01</span>
+              <h3 class="font-display">Payroll</h3>
+              <p>scheduled, calculated, paid</p>
+            </div>
+            <div class="bento__cell group span-4 stagger-item">
+              <span class="eyebrow num">02</span>
+              <h3 class="font-display">Time tracking</h3>
+              <p>hours in, paystubs out</p>
+            </div>
+            <div class="bento__cell group span-8 stagger-item">
+              <span class="eyebrow num">03</span>
+              <h3 class="font-display">Tax e-filing</h3>
+              <p>forms with a deadline, met</p>
+              <ul class="chips">
+                <li class="eyebrow">1099 family</li>
+                <li class="eyebrow">W-2 &amp; W-2PR</li>
+                <li class="eyebrow">940 · 941 · 943 · 944 · 945</li>
+                <li class="eyebrow">state &amp; 1095-B</li>
+              </ul>
+            </div>
+            <div class="bento__cell group span-8 stagger-item">
+              <span class="eyebrow num">04</span>
+              <h3 class="font-display">Payments &amp; wallet</h3>
+              <p>the money side, made to move itself</p>
+              <ul class="chips">
+                <li class="eyebrow">direct deposit</li>
+                <li class="eyebrow">bank linking &amp; ACH</li>
+                <li class="eyebrow">tax payments</li>
+                <li class="eyebrow">business wallet</li>
+              </ul>
+            </div>
+            <div class="bento__cell group span-4 stagger-item">
+              <span class="eyebrow num">05</span>
+              <h3 class="font-display">Compliance</h3>
+              <p>the part auditors remember</p>
+            </div>
+            <div class="bento__cell group span-12 stagger-item">
+              <span class="eyebrow num">06</span>
+              <h3 class="font-display">Support &amp; migration</h3>
+              <p>we do not disappear after onboarding</p>
+              <ul class="chips">
+                <li class="eyebrow">switch from any provider</li>
+                <li class="eyebrow">bulk employee import</li>
+                <li class="eyebrow">accountant access</li>
+                <li class="eyebrow">deadline reminders</li>
+              </ul>
+            </div>
+          </div>
+          <div class="services__foot">
+            <a class="eyebrow link-underline" href="#contact">see the packages →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 The tools -->
+      <section id="lab" class="lab">
+        <div class="lab__inner">
+          <div class="lab__head">
+            <div>
+              <p class="eyebrow section-eyebrow"><span class="idx-tag accent">04</span> — the tools</p>
+              <h2 class="font-display lines"><span class="line"><span>Free, on the bench.</span></span></h2>
+            </div>
+            <p class="lab__desc">small calculators we built to answer the questions clients ask in meetings. free, in the browser, no sign-up. the same math that runs your payroll.</p>
+          </div>
+
+          <p class="eyebrow lab__label">specimens</p>
+          <div class="lab__grid">
+            <a class="lab-card group" href="#lab" data-cursor="view">
+              <span class="lab-card__top">
+                <span class="lab-card__frame"><canvas data-sketch="glyphwall" aria-hidden="true"></canvas></span>
+                <span class="eyebrow arrow" aria-hidden="true">↗</span>
+              </span>
+              <div class="lab-card__body">
+                <span class="eyebrow lab-card__num">001</span>
+                <h3 class="glitch font-display" data-glitch="Paystub">Paystub</h3>
+                <p>type a gross pay and a state and watch a full paystub build itself, taxes and all. download as pdf.</p>
+              </div>
+            </a>
+            <a class="lab-card group" href="#lab" data-cursor="view">
+              <span class="lab-card__top">
+                <span class="lab-card__frame"><span class="aa" id="pairings-aa" data-swap="1099|W-2|941|940" aria-hidden="true">1099</span></span>
+                <span class="eyebrow arrow" aria-hidden="true">↗</span>
+              </span>
+              <div class="lab-card__body">
+                <span class="eyebrow lab-card__num">002</span>
+                <h3 class="glitch font-display" data-glitch="Form finder">Form finder</h3>
+                <p>answer three questions and get the exact form you owe, its due date, and what it costs to file.</p>
+              </div>
+            </a>
+            <a class="lab-card group" href="#lab" data-cursor="view">
+              <span class="lab-card__top">
+                <span class="lab-card__frame"><canvas data-sketch="ripple" aria-hidden="true"></canvas></span>
+                <span class="eyebrow arrow" aria-hidden="true">↗</span>
+              </span>
+              <div class="lab-card__body">
+                <span class="eyebrow lab-card__num">003</span>
+                <h3 class="glitch font-display" data-glitch="Pay planner">Pay planner</h3>
+                <p>drop in a start date and a frequency and see every pay date and deposit deadline for the year.</p>
+              </div>
+            </a>
+            <a class="lab-card group" href="#lab" data-cursor="view">
+              <span class="lab-card__top">
+                <span class="lab-card__frame"><canvas data-sketch="jitter" aria-hidden="true"></canvas></span>
+                <span class="eyebrow arrow" aria-hidden="true">↗</span>
+              </span>
+              <div class="lab-card__body">
+                <span class="eyebrow lab-card__num">004</span>
+                <h3 class="glitch font-display" data-glitch="Tax rates">Tax rates</h3>
+                <p>federal, social security, medicare and every state unemployment rate, current year, in one searchable table.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="lab__foot">
+            <span class="eyebrow">( toys, but load-bearing: the paystub math is the production math )</span>
+            <a class="eyebrow link-underline" href="#lab">the whole bench ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- The e-file engine -->
+      <section id="instrument" class="instrument">
+        <div class="instrument__inner">
+          <div class="instrument__card">
+            <div class="instrument__grid">
+              <div class="instrument__text">
+                <p class="eyebrow instrument__live"><span class="idx-tag">wagepress<sup>®</sup></span>irs authorized e-file</p>
+                <h2 class="font-display lines">
+                  <span class="line"><span>We built an</span></span>
+                  <span class="line"><span><em>e-file engine.</em></span></span>
+                </h2>
+                <p class="instrument__desc">ours, under the same roof as everything above: WagePress takes your payroll data and turns it into signed, validated returns that go straight to the IRS. no re-typing, no third-party filer, and a status you can check the moment it lands.</p>
+                <p class="eyebrow instrument__fx">1099 · w-2 · 94x · 1095-b · state · twc</p>
+                <a class="eyebrow instrument__cta" href="https://dev-company.wagepress.com/signup" target="_blank" rel="noreferrer" data-cursor="view">start filing ↗</a>
+              </div>
+              <figure class="instrument__figure">
+                <div class="browser" id="tour-frame">
+                  <div class="browser__bar">
+                    <span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg>dev-company.wagepress.com</span>
+                    <span class="browser__badge eyebrow"><i aria-hidden="true"></i>recorded live</span>
+                  </div>
+                  <div class="instrument__media">
+                    <video id="tour-video" muted loop playsinline preload="auto" poster="assets/work/tour.jpg" data-src="assets/work/tour.mp4" aria-label="Signing in to WagePress and walking through every screen of the business panel"></video>
+                    <button type="button" class="browser__toggle" id="tour-toggle" aria-label="Pause the tour">
+                      <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                      <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+                    </button>
+                  </div>
+                  <div class="browser__foot">
+                    <span class="browser__step eyebrow" id="tour-step">signing in</span>
+                    <span class="browser__time eyebrow tabular" id="tour-time">0:00 / 0:37</span>
+                  </div>
+                  <div class="browser__progress" aria-hidden="true"><span id="tour-progress"></span></div>
+                </div>
+                <figcaption class="eyebrow">
+                  <span>the real thing: sign in, then every screen</span>
+                  <span class="strong">login → dashboard → file</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 Contact -->
+      <section id="contact" class="contact">
+        <div class="contact__inner">
+          <div class="contact__grid">
+            <div class="contact__lead">
+              <p class="eyebrow section-eyebrow"><span class="idx-tag accent">05</span> — say hi anytime</p>
+              <h2 class="font-display lines">
+                <span class="line"><span>Bring us the</span></span>
+                <span class="line"><span><em>messy payroll.</em></span></span>
+              </h2>
+              <p class="contact__desc">the spreadsheet with forty tabs. the quarter that was never filed. the team that grew faster than the process. as established above, one login handles all of it.</p>
+            </div>
+
+            <form class="contact__form" id="contact-form" novalidate>
+              <div class="honeypot" aria-hidden="true">
+                <label>website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
+
+              <div class="form-row">
+                <label class="field">
+                  <span class="eyebrow">from</span>
+                  <input class="input" type="text" name="name" autocomplete="name" required placeholder="your name">
+                </label>
+                <label class="field">
+                  <span class="eyebrow">reply to</span>
+                  <input class="input" type="email" name="email" autocomplete="email" required placeholder="you@company.com">
+                </label>
+              </div>
+
+              <fieldset data-chips="multi" data-name="regarding">
+                <legend class="eyebrow">regarding</legend>
+                <div class="chip-row">
+                  <button type="button" class="eyebrow chip" aria-pressed="false">payroll</button>
+                  <button type="button" class="eyebrow chip" aria-pressed="false">time tracking</button>
+                  <button type="button" class="eyebrow chip" aria-pressed="false">tax filing</button>
+                  <button type="button" class="eyebrow chip" aria-pressed="false">payments</button>
+                  <button type="button" class="eyebrow chip" aria-pressed="false">migration</button>
+                  <button type="button" class="eyebrow chip" aria-pressed="false">accountant access</button>
+                  <button type="button" class="eyebrow chip" aria-pressed="false">something else</button>
+                </div>
+              </fieldset>
+
+              <fieldset data-chips="prompt">
+                <legend class="eyebrow">start with</legend>
+                <div class="chip-row">
+                  <button type="button" class="eyebrow chip" data-topic="payroll" data-seed="We run payroll by hand today and want it automated. Our team is ">we do payroll in a spreadsheet</button>
+                  <button type="button" class="eyebrow chip" data-topic="tax filing" data-seed="We have 1099s and W-2s to file this year. Roughly ">we have forms due</button>
+                  <button type="button" class="eyebrow chip" data-topic="migration" data-seed="We are on another payroll provider and want to switch. We currently use ">we want to switch providers</button>
+                  <button type="button" class="eyebrow chip" data-topic="something else" data-seed="Not sure what we need yet. Here is the situation: ">not sure yet — let's talk</button>
+                </div>
+              </fieldset>
+
+              <label class="field mt">
+                <span class="eyebrow">where things stand, in your words</span>
+                <textarea class="input" name="message" rows="4" required placeholder="a few honest lines about your team and your payroll…"></textarea>
+              </label>
+
+              <fieldset data-chips="single" data-name="team">
+                <legend class="eyebrow">team size — optional</legend>
+                <div class="chip-row">
+                  <button type="button" class="eyebrow chip tabular" aria-pressed="false">1 – 50</button>
+                  <button type="button" class="eyebrow chip tabular" aria-pressed="false">50 – 1,000</button>
+                  <button type="button" class="eyebrow chip tabular" aria-pressed="false">1,500 +</button>
+                  <button type="button" class="eyebrow chip tabular" aria-pressed="false">not sure yet</button>
+                </div>
+              </fieldset>
+
+              <div class="contact__actions">
+                <span class="magnetic"><button type="submit" class="eyebrow btn-primary">send it over</button></span>
+                <span class="contact__status" id="contact-status" role="status" aria-live="polite">A real person replies, not a bot.</span>
+                <a class="eyebrow link-underline contact__mail" href="mailto:hello@wagepress.com">or just email hello@wagepress.com</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="footer__logo font-display" href="#" aria-label="WagePress — home">wage<b>press</b><sup>®</sup></a>
+        <p class="footer__tag font-display">Smart tools for smarter businesses. No setup fees, no contracts.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Pages">
+        <a class="eyebrow link-underline" href="#work">/payroll</a>
+        <a class="eyebrow link-underline" href="#work">/time-tracking</a>
+        <a class="eyebrow link-underline" href="#apps">/tax-filing</a>
+        <a class="eyebrow link-underline" href="#services">/packages</a>
+        <a class="eyebrow link-underline" href="#lab">/tools</a>
+        <a class="eyebrow link-underline" href="#contact">/contact</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Elsewhere">
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Facebook ↗</a>
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Twitter ↗</a>
+        <a class="eyebrow link-underline" href="mailto:hello@wagepress.com">hello@wagepress.com</a>
+      </nav>
+    </div>
+
+    <div class="footer__news">
+      <form id="news-form" novalidate>
+        <label class="block">
+          <span class="eyebrow">One payroll note a month. Deadlines, rate changes, and the odd shortcut.</span>
+          <span class="row">
+            <input type="email" name="email" required autocomplete="email" placeholder="you@company.com">
+            <button type="submit" class="eyebrow">send it</button>
+          </span>
+        </label>
+      </form>
+    </div>
+
+    <div class="footer__awards">
+      <p class="eyebrow">Trust</p>
+      <nav aria-label="Trust">
+        <div class="award">
+          <p class="eyebrow">IRS</p>
+          <a class="eyebrow link-underline" href="#instrument">Authorized e-file provider</a>
+        </div>
+        <div class="award">
+          <p class="eyebrow">Security</p>
+          <a class="eyebrow link-underline" href="#">SOC 2 Type II</a>
+          <span class="eyebrow dot" aria-hidden="true">·</span>
+          <a class="eyebrow link-underline" href="#">256-bit SSL</a>
+          <span class="eyebrow dot" aria-hidden="true">·</span>
+          <a class="eyebrow link-underline" href="#">4.9 / 5 from 2,000+ reviews</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__legal">
+      <p class="eyebrow">© 2025 WagePress. All rights reserve<b>D</b></p>
+      <nav aria-label="Legal">
+        <a class="eyebrow link-underline" href="#">Privacy Policy</a>
+        <a class="eyebrow link-underline" href="#">Terms &amp; Conditions</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
