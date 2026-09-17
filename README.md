@@ -21,7 +21,7 @@ falls back to a flat SVG of the same object and scrolling stays native.
 | `index.html` | All page markup, section by section |
 | `css/styles.css` | Design tokens, layout, reveal timings, keyframes |
 | `js/main.js` | Preloader, WebGL hero, reveals, generated art, lab sketches, forms |
-| `assets/` | Favicon plus drop-in folders for real imagery |
+| `assets/` | Favicon, `logo-mark.svg` (the brand mark; the inline `#wp-mark` symbol at the top of `index.html` mirrors it) plus drop-in folders for real imagery |
 
 ## Sections in order
 
@@ -54,7 +54,7 @@ Every image starts as generated placeholder art. Drop real files at these
 paths and the page picks them up automatically, no code change needed:
 
 - Module previews: `assets/work/01.mp4` … `06.mp4` recordings with `01.jpg` … `06.jpg` posters (see below)
-- Tool previews: `assets/tools/01.mp4` … `04.mp4` (paystub, form finder, pay planner, tax rates, in that order). Until a clip exists there the card keeps showing its generative sketch — a missing file just hides the `<video>`.
+- Tool previews: the four tool cards reuse the module recordings from `assets/work` — paystub → `01.mp4` (Run Payroll), form finder → `04.mp4` (Tax Filing), pay planner → `03.mp4` (Time Tracking), tax rates → `06.mp4` (State Unemployment), each with its matching `0N.jpg` poster. To swap one, change the `poster` / `data-src` on that card's `<video class="lab-reel__video">` in `index.html`; `assets/tools/` is no longer read. If a clip fails to load the frame keeps the poster as a still.
 
 ### Recording the module flows
 

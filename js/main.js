@@ -244,7 +244,7 @@
     let wordIndex = 0;
     const tail = document.createTextNode(WORDS[0][1]);
     word.replaceChild(tail, word.childNodes[word.childNodes.length - 1]);
-    const fitWord = (pair) => { word.style.fontSize = `${Math.min(20, 128 / (pair[0].length + pair[1].length)).toFixed(2)}vw`; };
+    const fitWord = (pair) => { word.style.fontSize = `min(${Math.min(20, 128 / (pair[0].length + pair[1].length)).toFixed(2)}vw, 30vh)`; }; // vh cap keeps the word clear of the copy on short laptop screens
     fitWord(WORDS[0]);
     const setWord = (i) => {
       if (i === wordIndex) return;
@@ -414,10 +414,14 @@
       img.src = screenDataURL(i, $('.app-card__name', card).textContent.trim());
       loadReal(img);
     });
-    // tool previews aren't recorded yet — the video quietly hides and the
-    // generative sketch underneath keeps showing until one lands at data-src
+    // tool previews reuse the module recordings; if a clip fails to load the
+    // screen keeps the poster as a still instead of collapsing to an empty box
     $$('.lab-reel__video').forEach((v) => {
-      v.addEventListener('error', () => { v.hidden = true; }, { once: true });
+      v.addEventListener('error', () => {
+        const screen = v.parentElement;
+        if (screen && v.poster) screen.style.backgroundImage = `url("${v.poster}")`;
+        v.hidden = true;
+      }, { once: true });
       v.src = v.dataset.src;
     });
   }
@@ -654,11 +658,18 @@
   function initHeaderTone() {
     const bars = [$('.site-header'), $('.io-link-wrap')].filter(Boolean);
     const light = $$('.hero, .on-paper');
+    const veil = $('#hero-veil');
     let ticking = false;
     const update = () => {
       ticking = false;
       const y = 40;
-      const onLight = light.some((sec) => { const r = sec.getBoundingClientRect(); return r.top <= y && r.bottom > y; });
+      // the hero counts as light only until its navy veil has faded in at the end of the pin
+      const onLight = light.some((sec) => {
+        const r = sec.getBoundingClientRect();
+        if (!(r.top <= y && r.bottom > y)) return false;
+        if (veil && sec.classList.contains('hero') && parseFloat(veil.style.opacity || '0') > 0.5) return false;
+        return true;
+      });
       const menuOpen = document.body.classList.contains('menu-open');
       bars.forEach((b) => b.classList.toggle('on-light', onLight && !menuOpen));
     };

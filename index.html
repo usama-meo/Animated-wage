@@ -10,11 +10,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Urbanist:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="wp-mark" viewBox="0 0 129 124"><g transform="translate(60 109) rotate(180)"><path fill="currentColor" d="M1 0 L60 23.6 L60 55.6 L46 61.2 L46 33.5 L1 15.5 Z"/><path fill="currentColor" d="M23 33.45 L37 39.05 L37 80.8 L23 86.4 Z"/><path fill="currentColor" d="M0 24.5 L14 30.1 L14 102.95 L0 108.55 Z"/></g><g transform="translate(69 15)"><path fill="#2ef2b3" d="M1 0 L60 23.6 L60 55.6 L46 61.2 L46 33.5 L1 15.5 Z"/><path fill="#2ef2b3" d="M23 33.45 L37 39.05 L37 80.8 L23 86.4 Z"/><path fill="#2ef2b3" d="M0 24.5 L14 30.1 L14 102.95 L0 108.55 Z"/></g></symbol>
+  </svg>
 
   <div class="grain-overlay" aria-hidden="true"></div>
 
@@ -22,7 +26,7 @@
   <div class="preloader" aria-hidden="true" role="presentation" data-phase="play">
     <svg class="preloader__mark" id="preloader-mark" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An impossible triangle built from cubes"></svg>
     <div class="preloader__meta">
-      <span class="preloader__word font-display">wage<b>press</b><sup>®</sup></span>
+      <span class="preloader__word brand"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></span>
       <span class="preloader__count eyebrow tabular" id="preloader-count">000</span>
     </div>
   </div>
@@ -32,7 +36,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="site-header__bar">
-      <a class="logo font-display" href="#" aria-label="WagePress — home">wage<b>press</b><sup>®</sup></a>
+      <a class="logo brand" href="#" aria-label="WagePress — home"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></a>
       <nav class="site-nav" aria-label="Primary">
         <a class="eyebrow" href="#work">/payroll</a>
         <a class="eyebrow" href="#apps">/tax-filing</a>
@@ -319,14 +323,13 @@
                   </ul>
                 </div>
                 <div class="lab-reel__visual" aria-hidden="true">
-                  <div class="browser browser--compact lab-reel__frame">
+                  <div class="browser lab-reel__frame">
                     <div class="browser__bar">
                       <span class="browser__dots"><i></i><i></i><i></i></span>
-                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/paystub</span></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/paystub</span></span><span class="rec-dot" aria-hidden="true"></span>
                     </div>
                     <div class="lab-reel__screen">
-                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/01.mp4" aria-label="Paystub — preview"></video>
-                      <canvas data-sketch="glyphwall"></canvas>
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" poster="assets/work/01.jpg" data-src="assets/work/01.mp4" aria-label="Paystub — preview"></video>
                     </div>
                   </div>
                 </div>
@@ -346,14 +349,13 @@
                   </ul>
                 </div>
                 <div class="lab-reel__visual" aria-hidden="true">
-                  <div class="browser browser--compact lab-reel__frame">
+                  <div class="browser lab-reel__frame">
                     <div class="browser__bar">
                       <span class="browser__dots"><i></i><i></i><i></i></span>
-                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/form-finder</span></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/form-finder</span></span><span class="rec-dot" aria-hidden="true"></span>
                     </div>
-                    <div class="lab-reel__screen lab-reel__screen--aa">
-                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/02.mp4" aria-label="Form finder — preview"></video>
-                      <span class="aa" id="pairings-aa" data-swap="1099|W-2|941|940">1099</span>
+                    <div class="lab-reel__screen">
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" poster="assets/work/04.jpg" data-src="assets/work/04.mp4" aria-label="Form finder — preview"></video>
                     </div>
                   </div>
                 </div>
@@ -373,14 +375,13 @@
                   </ul>
                 </div>
                 <div class="lab-reel__visual" aria-hidden="true">
-                  <div class="browser browser--compact lab-reel__frame">
+                  <div class="browser lab-reel__frame">
                     <div class="browser__bar">
                       <span class="browser__dots"><i></i><i></i><i></i></span>
-                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/pay-planner</span></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/pay-planner</span></span><span class="rec-dot" aria-hidden="true"></span>
                     </div>
                     <div class="lab-reel__screen">
-                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/03.mp4" aria-label="Pay planner — preview"></video>
-                      <canvas data-sketch="ripple"></canvas>
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" poster="assets/work/03.jpg" data-src="assets/work/03.mp4" aria-label="Pay planner — preview"></video>
                     </div>
                   </div>
                 </div>
@@ -400,14 +401,13 @@
                   </ul>
                 </div>
                 <div class="lab-reel__visual" aria-hidden="true">
-                  <div class="browser browser--compact lab-reel__frame">
+                  <div class="browser lab-reel__frame">
                     <div class="browser__bar">
                       <span class="browser__dots"><i></i><i></i><i></i></span>
-                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/tax-rates</span></span>
+                      <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="8" height="8"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>wagepress.com/tools/tax-rates</span></span><span class="rec-dot" aria-hidden="true"></span>
                     </div>
                     <div class="lab-reel__screen">
-                      <video class="lab-reel__video" muted loop playsinline preload="auto" data-src="assets/tools/04.mp4" aria-label="Tax rates — preview"></video>
-                      <canvas data-sketch="jitter"></canvas>
+                      <video class="lab-reel__video" muted loop playsinline preload="auto" poster="assets/work/06.jpg" data-src="assets/work/06.mp4" aria-label="Tax rates — preview"></video>
                     </div>
                   </div>
                 </div>
@@ -441,7 +441,7 @@
           <div class="compare__body">
             <div class="compare__labelcol">
               <div class="compare__spacer" aria-hidden="true">
-                <span class="compare__mark-wordmark font-display">wage<b>press</b></span>
+                <span class="compare__mark-wordmark brand"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></span>
               </div>
               <div class="compare__labels">
                 <div class="compare__row">Payroll runs itself</div>
@@ -652,7 +652,7 @@
   <footer class="site-footer">
     <div class="footer__top">
       <div class="footer__brand">
-        <a class="footer__logo font-display" href="#" aria-label="WagePress — home">wage<b>press</b><sup>®</sup></a>
+        <a class="footer__logo brand" href="#" aria-label="WagePress — home"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></a>
         <p class="footer__tag font-display">Smart tools for smarter businesses. No setup fees, no contracts.</p>
       </div>
       <nav class="footer__nav" aria-label="Pages">
