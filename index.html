@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Urbanist:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Urbanist:wght@800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
@@ -38,11 +38,18 @@
     <div class="site-header__bar">
       <a class="logo brand" href="#" aria-label="WagePress — home"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></a>
       <nav class="site-nav" aria-label="Primary">
-        <a class="eyebrow" href="#work">/payroll</a>
-        <a class="eyebrow" href="#apps">/tax-filing</a>
-        <a class="eyebrow" href="#services">/packages</a>
-        <a class="eyebrow" href="#lab">/tools</a>
-        <a class="eyebrow" href="#contact">/contact</a>
+        <a class="eyebrow" href="index.html">Home</a>
+        <a class="eyebrow" href="index.html#work">About Us</a>
+        <div class="nav-drop">
+          <button type="button" class="eyebrow nav-drop__btn" aria-expanded="false" aria-controls="nav-drop-services">Services<svg class="nav-drop__chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-drop__panel" id="nav-drop-services">
+            <a class="nav-drop__link" href="payroll-management.html">Payroll Management</a>
+            <a class="nav-drop__link" href="time-tracking.html">Time Tracking</a>
+            <a class="nav-drop__link" href="tax-filing.html">Tax Filing</a>
+          </div>
+        </div>
+        <a class="eyebrow" href="packages.html">Packages</a>
+        <a class="eyebrow" href="contact.html">Contact</a>
         <a class="eyebrow is-ghost" href="#instrument" aria-hidden="true" tabindex="-1">sign in ↗</a>
       </nav>
       <button type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -57,11 +64,21 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
     <nav>
-      <a class="font-display" href="#work"><span class="eyebrow">01</span><span>/payroll</span></a>
-      <a class="font-display" href="#apps"><span class="eyebrow">02</span><span>/tax-filing</span></a>
-      <a class="font-display" href="#services"><span class="eyebrow">03</span><span>/packages</span></a>
-      <a class="font-display" href="#lab"><span class="eyebrow">04</span><span>/tools</span></a>
-      <a class="font-display" href="#contact"><span class="eyebrow">05</span><span>/contact</span></a>
+      <a class="font-display" href="index.html"><span class="eyebrow">01</span><span>Home</span></a>
+      <a class="font-display" href="index.html#work"><span class="eyebrow">02</span><span>About Us</span></a>
+      <div class="mobile-menu__drop">
+        <button type="button" class="font-display mobile-menu__drop-btn" aria-expanded="false" aria-controls="mobile-drop-services">
+          <span class="eyebrow">03</span><span>Services</span>
+          <svg class="mobile-menu__drop-btn__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-menu__drop-panel" id="mobile-drop-services">
+          <a href="payroll-management.html">Payroll Management</a>
+          <a href="time-tracking.html">Time Tracking</a>
+          <a href="tax-filing.html">Tax Filing</a>
+        </div>
+      </div>
+      <a class="font-display" href="packages.html"><span class="eyebrow">04</span><span>Packages</span></a>
+      <a class="font-display" href="contact.html"><span class="eyebrow">05</span><span>Contact</span></a>
     </nav>
     <a class="eyebrow mobile-menu__io" href="https://dev-company.wagepress.com/" target="_blank" rel="noreferrer">sign in ↗</a>
     <a class="eyebrow link-underline mobile-menu__mail" href="mailto:hello@wagepress.com">hello@wagepress.com</a>
@@ -102,11 +119,11 @@
         <div class="work__inner">
           <div class="work__grid">
             <div class="work__lead">
-              <p class="eyebrow section-eyebrow"><span class="idx-tag accent">01</span> — what it does</p>
+              <p class="eyebrow section-eyebrow rise"><span class="idx-tag accent">01</span> — what it does</p>
               <h2 class="font-display lines">
                 <span class="line"><span>Payroll that <em>runs itself</em>.</span></span>
               </h2>
-              <div class="work__preview browser browser--compact" id="work-preview" aria-hidden="true">
+              <div class="work__preview browser browser--compact reveal" id="work-preview" aria-hidden="true">
                 <div class="browser__bar">
                   <span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span>
                   <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span id="work-preview-url">dev-company.wagepress.com/payroll</span></span>
@@ -186,7 +203,7 @@
                   </a>
                 </div>
               </div>
-              <div class="work__foot">
+              <div class="work__foot rise">
                 <span class="eyebrow">payroll · people · time · taxes</span>
                 <span class="eyebrow">( one login, no setup fees )</span>
               </div>
@@ -195,101 +212,177 @@
         </div>
       </section>
 
-      <!-- 02 The forms shelf -->
-      <section id="apps" class="apps">
-        <div class="apps__inner">
-          <div class="apps__head">
-            <p class="eyebrow section-eyebrow"><span class="idx-tag accent">02</span> — the forms shelf</p>
-            <a class="eyebrow link-underline" href="#instrument">every form we file →</a>
+      <!-- 02 The workflow: pinned, one screen per step -->
+      <section id="workflow" class="wf" style="--wf-steps: 6">
+        <div class="wf__stage">
+          <div class="wf__head rise">
+            <p class="eyebrow section-eyebrow"><span class="idx-tag accent">02</span> — the workflow</p>
+            <p class="eyebrow wf__tag"><span class="wf__rule" aria-hidden="true"></span><span>payroll<br>builds brighter<br>businesses</span></p>
           </div>
-          <h2 class="font-display">Every form, <em>one screen each</em>.</h2>
-          <p class="apps__desc">pick the tax year, fill the boxes, review, e-file. the ones businesses reach for most, shown on the phone.</p>
 
-          <div class="apps__shelf">
-            <div class="apps__hint"><span class="eyebrow" aria-hidden="true">swipe for more →</span></div>
-            <div class="apps__track-wrap">
-              <div class="apps__track reveal" id="apps-track">
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="1099-NEC — screen" data-src="assets/apps/1099-nec.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="1099-NEC">1099-NEC</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="1099-MISC — screen" data-src="assets/apps/1099-misc.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="1099-MISC">1099-MISC</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="W-2 — screen" data-src="assets/apps/w-2.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="W-2">W-2</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="Form 941 — screen" data-src="assets/apps/941.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="Form 941">Form 941</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="Form 940 — screen" data-src="assets/apps/940.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="Form 940">Form 940</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="1095-B — screen" data-src="assets/apps/1095-b.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="1095-B">1095-B</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-                <a class="app-card group" href="#apps"><div class="app-card__screen"><img alt="W-2PR — screen" data-src="assets/apps/w-2pr.webp" loading="lazy"></div><div class="app-card__label"><span class="glitch font-display app-card__name" data-glitch="W-2PR">W-2PR</span><span class="eyebrow arrow" aria-hidden="true">↗</span></div></a>
-              </div>
-              <div class="apps__fade" aria-hidden="true"></div>
+          <div class="wf__grid stagger" id="wf-grid">
+            <div class="wf__left">
+              <h2 class="font-display wf-swap wf-title stagger-item" data-delay="0s"><span class="wf-swap__item is-active" data-step="0">One workflow.<br>A brighter business.</span><span class="wf-swap__item" data-step="1">File taxes.<br>Stay compliant.</span><span class="wf-swap__item" data-step="2">Track time.<br>Move forward.</span><span class="wf-swap__item" data-step="3">Care for people.<br>Grow the business.</span><span class="wf-swap__item" data-step="4">Onboard fast.<br>Offboard clean.</span><span class="wf-swap__item" data-step="5">Stay ahead.<br>Automatically.</span></h2>
+              <p class="wf-swap wf-desc stagger-item" data-delay="0.1s"><span class="wf-swap__item is-active" data-step="0">From payroll to compliance, everything connects, so you can move faster, with total confidence.</span><span class="wf-swap__item" data-step="1">Federal, state and local filings tracked from one screen, with every deadline visible before it arrives.</span><span class="wf-swap__item" data-step="2">From clock in to payroll, time tracking keeps your team aligned, your projects on track, and your business moving.</span><span class="wf-swap__item" data-step="3">Health, retirement, dental and more, enrolled once and deducted automatically, with no second system to reconcile.</span><span class="wf-swap__item" data-step="4">W-4, I-9, direct deposit and state forms, assigned, signed and stored in one place.</span><span class="wf-swap__item" data-step="5">Alerts, deadlines and policy checks that run in the background, so an audit is just a formality.</span></p>
+              <ol class="wf-steps" id="wf-steps"><li class="wf-step is-active stagger-item" data-delay="0.20s" data-step="0"><button type="button" aria-label="Go to Run Payroll"><i class="wf-step__dot"></i><span class="wf-step__n">01</span><span class="wf-step__t"><b>Run Payroll</b><small>Process pay in minutes.</small></span></button></li><li class="wf-step stagger-item" data-delay="0.27s" data-step="1"><button type="button" aria-label="Go to Tax Filing"><i class="wf-step__dot"></i><span class="wf-step__n">02</span><span class="wf-step__t"><b>Tax Filing</b><small>Federal, state, and local.</small></span></button></li><li class="wf-step stagger-item" data-delay="0.34s" data-step="2"><button type="button" aria-label="Go to Time Tracking"><i class="wf-step__dot"></i><span class="wf-step__n">03</span><span class="wf-step__t"><b>Time Tracking</b><small>Hours flow straight to pay.</small></span></button></li><li class="wf-step stagger-item" data-delay="0.41s" data-step="3"><button type="button" aria-label="Go to Benefits"><i class="wf-step__dot"></i><span class="wf-step__n">04</span><span class="wf-step__t"><b>Benefits</b><small>Deductions, made simple.</small></span></button></li><li class="wf-step stagger-item" data-delay="0.48s" data-step="4"><button type="button" aria-label="Go to Employee Forms"><i class="wf-step__dot"></i><span class="wf-step__n">05</span><span class="wf-step__t"><b>Employee Forms</b><small>Onboarding to offboarding.</small></span></button></li><li class="wf-step stagger-item" data-delay="0.55s" data-step="5"><button type="button" aria-label="Go to Compliance"><i class="wf-step__dot"></i><span class="wf-step__n">06</span><span class="wf-step__t"><b>Compliance</b><small>Stay ahead, automatically.</small></span></button></li></ol>
+              <div class="wf-chips stagger-item" data-delay="0.2s" id="wf-chips"><button type="button" class="wf-chip is-active" data-step="0"><span>01</span>Run Payroll</button><button type="button" class="wf-chip" data-step="1"><span>02</span>Tax Filing</button><button type="button" class="wf-chip" data-step="2"><span>03</span>Time Tracking</button><button type="button" class="wf-chip" data-step="3"><span>04</span>Benefits</button><button type="button" class="wf-chip" data-step="4"><span>05</span>Employee Forms</button><button type="button" class="wf-chip" data-step="5"><span>06</span>Compliance</button></div>
+              <p class="wf-hint stagger-item" data-delay="0.65s"><span class="wf-hint__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span><span class="eyebrow">scroll to explore</span></p>
             </div>
+
+            <div class="wf__center">
+              <div class="wf-fit stagger-item" data-delay="0.15s" id="wf-fit">
+                <div class="wf-stack">
+                  <div class="wf-frame wf-frame--2" aria-hidden="true"></div>
+                  <div class="wf-frame wf-frame--1" aria-hidden="true"></div>
+                  <div class="wf-window" id="wf-window">
+                    <div class="wf-window__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                    <div class="wf-nav">
+                      <span class="wf-nav__brand"><i></i>WagePress</span>
+                      <span class="wf-nav__tabs" id="wf-tabs"><span data-tab="payroll" class="is-active">Payroll</span><span data-tab="people">People</span><span data-tab="time">Time</span><span data-tab="taxes">Taxes</span><span data-tab="compliance">Compliance</span></span>
+                      <span class="wf-nav__tools"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg><span class="wf-nav__bell"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 11V7a4 4 0 0 1 8 0v4l1 1.5H3z"/><path d="M6.5 14a1.5 1.5 0 0 0 3 0"/></svg></span><span class="wf-nav__av">JS</span></span>
+                    </div>
+                    <div class="wf-body"><div class="wf-screen is-active" data-tab="payroll" data-step="0">
+  <div class="wf-s__head"><span class="wf-s__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 12l4-4 3 3 5-6"/><path d="M10 5h4v4"/></svg></span><div class="wf-s__t"><strong>Good morning, Jordan.</strong><span>Payroll is ready to run.</span></div><span class="wf-cta">Run payroll<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+  <div class="wf-stats"><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 13a4.5 4.5 0 0 1 9 0M10.5 3a2.5 2.5 0 0 1 0 5M12 9a4 4 0 0 1 2.5 4"/></svg><span>Employees</span></div><strong class="wf-stat__v">28</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>12%</span><span>vs. last month</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4H12v2.5"/><rect x="2" y="6.5" width="12" height="7" rx="1.5"/><circle cx="11" cy="10" r="1"/></svg><span>Total payroll</span></div><strong class="wf-stat__v">$142,320</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>8%</span><span>vs. last month</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span>Taxes</span></div><strong class="wf-stat__v">$27,850</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--ok"></i><span>On track</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><span>Next pay date</span></div><strong class="wf-stat__v">Mar 15, 2025</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--ok"></i><span>5 days away</span></div></div></div>
+  <div class="wf-panels"><div class="wf-panel wf-panel--wide"><div class="wf-panel__hd"><span>Payroll trend</span><span class="wf-sel">Last 6 months<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><svg class="wf-chart" viewBox="0 0 320 128" preserveAspectRatio="none" aria-hidden="true"><text x="28" y="111" class="wf-ax" text-anchor="end">$0</text><line x1="34" y1="108" x2="320" y2="108" class="wf-grid"/><text x="28" y="77" class="wf-ax" text-anchor="end">$100k</text><line x1="34" y1="74" x2="320" y2="74" class="wf-grid"/><text x="28" y="43" class="wf-ax" text-anchor="end">$200k</text><line x1="34" y1="40" x2="320" y2="40" class="wf-grid"/><text x="28" y="9" class="wf-ax" text-anchor="end">$300k</text><line x1="34" y1="6" x2="320" y2="6" class="wf-grid"/><rect x="45" y="69" width="11" height="39" rx="2" class="wf-bar wf-bar--dim"/><rect x="60" y="63" width="11" height="45" rx="2" class="wf-bar wf-bar--hi"/><text x="58" y="124" class="wf-ax" text-anchor="middle">Oct</text><rect x="92" y="61" width="11" height="47" rx="2" class="wf-bar wf-bar--dim"/><rect x="107" y="55" width="11" height="53" rx="2" class="wf-bar wf-bar--hi"/><text x="105" y="124" class="wf-ax" text-anchor="middle">Nov</text><rect x="140" y="52" width="11" height="56" rx="2" class="wf-bar wf-bar--dim"/><rect x="155" y="45" width="11" height="63" rx="2" class="wf-bar wf-bar--hi"/><text x="153" y="124" class="wf-ax" text-anchor="middle">Dec</text><rect x="188" y="57" width="11" height="51" rx="2" class="wf-bar wf-bar--dim"/><rect x="203" y="37" width="11" height="71" rx="2" class="wf-bar wf-bar--hi"/><text x="201" y="124" class="wf-ax" text-anchor="middle">Jan</text><rect x="236" y="45" width="11" height="63" rx="2" class="wf-bar wf-bar--dim"/><rect x="250" y="30" width="11" height="78" rx="2" class="wf-bar wf-bar--hi"/><text x="248" y="124" class="wf-ax" text-anchor="middle">Feb</text><rect x="283" y="37" width="11" height="71" rx="2" class="wf-bar wf-bar--dim"/><rect x="298" y="14" width="11" height="94" rx="2" class="wf-bar wf-bar--hi"/><text x="296" y="124" class="wf-ax" text-anchor="middle">Mar</text></svg></div><div class="wf-panel wf-panel--donut"><div class="wf-panel__hd"><span></span></div><svg class="wf-donut wf-donut--lg" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" class="wf-donut__track"/><g transform="rotate(-90 50 50)"><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="78 100" class="wf-donut__ring"/></g><text x="50" y="50" text-anchor="middle" dominant-baseline="central" class="wf-donut__t">78%</text></svg><div class="wf-panel__cta"><strong>On track this quarter</strong><span>Everything&rsquo;s running smoothly.</span><span class="wf-link">View details<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></div></div>
+  
+</div><div class="wf-screen" data-tab="taxes" data-step="1">
+  <div class="wf-s__head"><span class="wf-s__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg></span><div class="wf-s__t"><strong>Tax Filing</strong><span>Stay compliant. File with confidence.</span></div><span class="wf-cta">File taxes<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+  <div class="wf-stats"><div class="wf-stat wf-stat--filing"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 14h12M3 14V6h10v8M8 2 2 6h12z"/><path d="M6 14V9M10 14V9"/></svg><span>Federal Filing</span><span class="wf-pill wf-pill--ok">On track</span></div><span class="wf-stat__q">Q1 2025</span><strong class="wf-stat__v">Apr 15, 2025</strong><div class="wf-stat__ft"><span>Estimated due date</span><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div></div><div class="wf-stat wf-stat--filing"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14.5s-4.5-4.2-4.5-7.5a4.5 4.5 0 0 1 9 0c0 3.3-4.5 7.5-4.5 7.5z"/><circle cx="8" cy="7" r="1.6"/></svg><span>State Filing</span><span class="wf-pill wf-pill--ok">On track</span></div><span class="wf-stat__q">Q1 2025</span><strong class="wf-stat__v">Apr 30, 2025</strong><div class="wf-stat__ft"><span>Estimated due date</span><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div></div><div class="wf-stat wf-stat--filing"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14.5s-4.5-4.2-4.5-7.5a4.5 4.5 0 0 1 9 0c0 3.3-4.5 7.5-4.5 7.5z"/><circle cx="8" cy="7" r="1.6"/></svg><span>Local Filing</span><span class="wf-pill wf-pill--warn">3 pending</span></div><span class="wf-stat__q">Q1 2025</span><strong class="wf-stat__v">May 15, 2025</strong><div class="wf-stat__ft"><span>Estimated due date</span><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div></div></div>
+  <div class="wf-panels"><div class="wf-panel "><div class="wf-panel__hd"><span>Filing summary</span><span class="wf-sel">2025<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><div class="wf-split"><svg class="wf-donut wf-donut--md" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" class="wf-donut__track"/><g transform="rotate(-90 50 50)"><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="60 100" stroke-dashoffset="0" class="wf-donut__seg wf-seg--ok"/><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="20 100" stroke-dashoffset="-60" class="wf-donut__seg wf-seg--blue"/><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="27 100" stroke-dashoffset="-80" class="wf-donut__seg wf-seg--dim"/><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="13 100" stroke-dashoffset="-107" class="wf-donut__seg wf-seg--dimmer"/></g><text x="50" y="50" text-anchor="middle" dominant-baseline="central" class="wf-donut__t">75%</text></svg><ul class="wf-legend"><li><i class="wf-dot wf-dot--ok"></i>Completed<b>9</b></li><li><i class="wf-dot wf-dot--blue"></i>In progress<b>3</b></li><li><i class="wf-dot wf-dot--dim"></i>Upcoming<b>4</b></li><li><i class="wf-dot wf-dot--dimmer"></i>Not started<b>2</b></li></ul></div><span class="wf-cap">15 total filings</span></div><div class="wf-panel wf-panel--wide"><div class="wf-panel__hd"><span>Upcoming deadlines</span><span class="wf-link">View all<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div><ul class="wf-list"><li class="wf-row "><span class="wf-date"><b>APR</b>15</span><span class="wf-row__t"><b>Federal tax filing</b><small>Q1 2025</small></span><span class="wf-row__s"><i class="wf-dot wf-dot--ok"></i><span>On track</span></span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><span class="wf-date"><b>APR</b>30</span><span class="wf-row__t"><b>California state filing</b><small>Q1 2025</small></span><span class="wf-row__s"><i class="wf-dot wf-dot--ok"></i><span>On track</span></span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><span class="wf-date"><b>MAY</b>15</span><span class="wf-row__t"><b>San Francisco local filing</b><small>Q1 2025</small></span><span class="wf-row__s"><i class="wf-dot wf-dot--warn"></i><span>Pending</span></span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li></ul></div></div>
+  <div class="wf-panel "><div class="wf-panel__hd"><span>Recent filings</span><span class="wf-link">View history<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div><ul class="wf-list wf-list--tight"><li class="wf-row "><span class="wf-row__d">Jan 31, 2025</span><span class="wf-row__t"><b>Federal 941</b></span><span class="wf-pill wf-pill--ok">Submitted</span><span class="wf-row__v"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg>View</span></li><li class="wf-row "><span class="wf-row__d">Jan 31, 2025</span><span class="wf-row__t"><b>California DE 9</b></span><span class="wf-pill wf-pill--ok">Submitted</span><span class="wf-row__v"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg>View</span></li><li class="wf-row "><span class="wf-row__d">Jan 24, 2025</span><span class="wf-row__t"><b>San Francisco Payroll Tax</b></span><span class="wf-pill wf-pill--ok">Submitted</span><span class="wf-row__v"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg>View</span></li></ul></div>
+</div><div class="wf-screen" data-tab="time" data-step="2">
+  <div class="wf-s__head"><span class="wf-s__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg></span><div class="wf-s__t"><strong>Time Tracking</strong><span>Turn hours into progress.</span></div><span class="wf-cta">Add time entry<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+  <div class="wf-stats"><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><span>This week</span></div><strong class="wf-stat__v">1,248</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>12%</span><span>vs. last week</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg><span>Overtime</span></div><strong class="wf-stat__v">86</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>8%</span><span>vs. last week</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 13a4.5 4.5 0 0 1 9 0M10.5 3a2.5 2.5 0 0 1 0 5M12 9a4 4 0 0 1 2.5 4"/></svg><span>Active employees</span></div><strong class="wf-stat__v">28</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--ok"></i><span>On the clock</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span>Pending approvals</span></div><strong class="wf-stat__v">4</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--warn"></i><span>Awaiting review</span></div></div></div>
+  <div class="wf-panels"><div class="wf-panel wf-panel--wide"><div class="wf-panel__hd"><span>Hours worked</span><span class="wf-sel">This week<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><div class="wf-legend wf-legend--row"><span><i class="wf-dot wf-dot--dim"></i>Regular hours</span><span><i class="wf-dot wf-dot--ok"></i>Overtime</span></div><svg class="wf-chart" viewBox="0 0 320 128" preserveAspectRatio="none" aria-hidden="true"><text x="24" y="111" class="wf-ax" text-anchor="end">0</text><line x1="30" y1="108" x2="320" y2="108" class="wf-grid"/><text x="24" y="77" class="wf-ax" text-anchor="end">100</text><line x1="30" y1="74" x2="320" y2="74" class="wf-grid"/><text x="24" y="43" class="wf-ax" text-anchor="end">200</text><line x1="30" y1="40" x2="320" y2="40" class="wf-grid"/><text x="24" y="9" class="wf-ax" text-anchor="end">300</text><line x1="30" y1="6" x2="320" y2="6" class="wf-grid"/><rect x="42" y="47" width="18" height="61" rx="2" class="wf-bar wf-bar--dim"/><rect x="42" y="39" width="18" height="8" rx="2" class="wf-bar wf-bar--hi"/><text x="51" y="124" class="wf-ax" text-anchor="middle">Mon</text><rect x="83" y="33" width="18" height="75" rx="2" class="wf-bar wf-bar--dim"/><rect x="83" y="20" width="18" height="12" rx="2" class="wf-bar wf-bar--hi"/><text x="92" y="124" class="wf-ax" text-anchor="middle">Tue</text><rect x="125" y="45" width="18" height="63" rx="2" class="wf-bar wf-bar--dim"/><rect x="125" y="37" width="18" height="8" rx="2" class="wf-bar wf-bar--hi"/><text x="134" y="124" class="wf-ax" text-anchor="middle">Wed</text><rect x="166" y="35" width="18" height="73" rx="2" class="wf-bar wf-bar--dim"/><rect x="166" y="22" width="18" height="12" rx="2" class="wf-bar wf-bar--hi"/><text x="175" y="124" class="wf-ax" text-anchor="middle">Thu</text><rect x="207" y="49" width="18" height="59" rx="2" class="wf-bar wf-bar--dim"/><rect x="207" y="39" width="18" height="10" rx="2" class="wf-bar wf-bar--hi"/><text x="216" y="124" class="wf-ax" text-anchor="middle">Fri</text><rect x="249" y="94" width="18" height="14" rx="2" class="wf-bar wf-bar--dim"/><rect x="249" y="90" width="18" height="4" rx="2" class="wf-bar wf-bar--hi"/><text x="258" y="124" class="wf-ax" text-anchor="middle">Sat</text><rect x="290" y="88" width="18" height="20" rx="2" class="wf-bar wf-bar--dim"/><rect x="290" y="84" width="18" height="4" rx="2" class="wf-bar wf-bar--hi"/><text x="299" y="124" class="wf-ax" text-anchor="middle">Sun</text></svg></div><div class="wf-panel wf-panel--donut"><div class="wf-panel__hd"><span></span></div><svg class="wf-donut wf-donut--lg" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" class="wf-donut__track"/><g transform="rotate(-90 50 50)"><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="93 100" class="wf-donut__ring"/></g><text x="50" y="47" text-anchor="middle" dominant-baseline="central" class="wf-donut__t">1,248</text><text x="50" y="62" text-anchor="middle" class="wf-donut__s">Total hours</text></svg><ul class="wf-legend"><li><i class="wf-dot wf-dot--dim"></i>Regular<b>1,162</b></li><li><i class="wf-dot wf-dot--ok"></i>Overtime<b>86</b></li></ul><span class="wf-btn">View timesheets<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></div>
+  
+</div><div class="wf-screen" data-tab="people" data-step="3">
+  <div class="wf-s__head"><span class="wf-s__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.3-5.5-7A3 3 0 0 1 8 4.7a3 3 0 0 1 5.5 1.8c0 3.7-5.5 7-5.5 7z"/></svg></span><div class="wf-s__t"><strong>Benefits</strong><span>Healthy people build brighter businesses.</span></div><span class="wf-cta">Manage benefits<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+  <div class="wf-stats"><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 13a4.5 4.5 0 0 1 9 0M10.5 3a2.5 2.5 0 0 1 0 5M12 9a4 4 0 0 1 2.5 4"/></svg><span>Enrolled</span></div><strong class="wf-stat__v">24</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>8%</span><span>vs. last month</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 2.5 4v4c0 3.2 2.3 5.6 5.5 6.5 3.2-.9 5.5-3.3 5.5-6.5V4z"/><path d="M5.8 8l1.6 1.6L10.5 6.5"/></svg><span>Total deductions</span></div><strong class="wf-stat__v">$13,420</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>12%</span><span>vs. last month</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 7h13M4 10.5h3"/></svg><span>Company contribution</span></div><strong class="wf-stat__v">$27,850</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>10%</span><span>vs. last month</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><span>Open enrollment</span></div><strong class="wf-stat__v">12 days</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--ok"></i><span>Active now</span></div></div></div>
+  <div class="wf-panels"><div class="wf-panel wf-panel--wide"><div class="wf-panel__hd"><span>Contribution trend</span><span class="wf-sel">Last 6 months<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><svg class="wf-chart" viewBox="0 0 320 128" preserveAspectRatio="none" aria-hidden="true"><text x="28" y="111" class="wf-ax" text-anchor="end">$0</text><line x1="34" y1="108" x2="320" y2="108" class="wf-grid"/><text x="28" y="86" class="wf-ax" text-anchor="end">$10K</text><line x1="34" y1="82" x2="320" y2="82" class="wf-grid"/><text x="28" y="60" class="wf-ax" text-anchor="end">$20K</text><line x1="34" y1="57" x2="320" y2="57" class="wf-grid"/><text x="28" y="34" class="wf-ax" text-anchor="end">$30K</text><line x1="34" y1="32" x2="320" y2="32" class="wf-grid"/><text x="28" y="9" class="wf-ax" text-anchor="end">$40K</text><line x1="34" y1="6" x2="320" y2="6" class="wf-grid"/><rect x="45" y="67" width="11" height="41" rx="2" class="wf-bar wf-bar--dim"/><rect x="60" y="71" width="11" height="37" rx="2" class="wf-bar wf-bar--hi"/><text x="58" y="124" class="wf-ax" text-anchor="middle">Oct</text><rect x="92" y="59" width="11" height="49" rx="2" class="wf-bar wf-bar--dim"/><rect x="107" y="63" width="11" height="45" rx="2" class="wf-bar wf-bar--hi"/><text x="105" y="124" class="wf-ax" text-anchor="middle">Nov</text><rect x="140" y="49" width="11" height="59" rx="2" class="wf-bar wf-bar--dim"/><rect x="155" y="53" width="11" height="55" rx="2" class="wf-bar wf-bar--hi"/><text x="153" y="124" class="wf-ax" text-anchor="middle">Dec</text><rect x="188" y="51" width="11" height="57" rx="2" class="wf-bar wf-bar--dim"/><rect x="203" y="45" width="11" height="63" rx="2" class="wf-bar wf-bar--hi"/><text x="201" y="124" class="wf-ax" text-anchor="middle">Jan</text><rect x="236" y="41" width="11" height="67" rx="2" class="wf-bar wf-bar--dim"/><rect x="250" y="35" width="11" height="73" rx="2" class="wf-bar wf-bar--hi"/><text x="248" y="124" class="wf-ax" text-anchor="middle">Feb</text><rect x="283" y="33" width="11" height="75" rx="2" class="wf-bar wf-bar--dim"/><rect x="298" y="18" width="11" height="90" rx="2" class="wf-bar wf-bar--hi"/><text x="296" y="124" class="wf-ax" text-anchor="middle">Mar</text></svg><div class="wf-legend wf-legend--row wf-legend--center"><span><i class="wf-dot wf-dot--dim"></i>Employee</span><span><i class="wf-dot wf-dot--ok"></i>Company</span></div></div><div class="wf-panel wf-panel--donut"><div class="wf-panel__hd"><span>Enrollment rate</span></div><svg class="wf-donut wf-donut--md" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" class="wf-donut__track"/><g transform="rotate(-90 50 50)"><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="78 100" class="wf-donut__ring"/></g><text x="50" y="50" text-anchor="middle" dominant-baseline="central" class="wf-donut__t">78%</text></svg><div class="wf-panel__cta"><strong>Employees enrolled</strong><span>+6% from last year</span><span class="wf-link">View details<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></div></div>
+  <div class="wf-cats"><span class="wf-cats__t">Benefit categories</span><div class="wf-cat"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.3-5.5-7A3 3 0 0 1 8 4.7a3 3 0 0 1 5.5 1.8c0 3.7-5.5 7-5.5 7z"/></svg><span><b>Health</b><small>24 enrolled</small></span></div><div class="wf-cat"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5a5 4 0 1 1 10 0v1.5l1.5 1v1.5H12l-1 1.5H5l-1-1.5H2.5V11L3 10z"/><circle cx="6" cy="8" r=".7"/></svg><span><b>Retirement</b><small>21 enrolled</small></span></div><div class="wf-cat"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M5.5 9.5a3 3 0 0 0 5 0"/></svg><span><b>Dental</b><small>18 enrolled</small></span></div><div class="wf-cat"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 8s2.5-4.5 6.5-4.5S14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"/><circle cx="8" cy="8" r="2"/></svg><span><b>Vision</b><small>16 enrolled</small></span></div><div class="wf-cat"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="8" r="1"/><circle cx="8" cy="8" r="1"/><circle cx="12" cy="8" r="1"/></svg><span><b>Life &amp; More</b><small>14 enrolled</small></span></div></div>
+</div><div class="wf-screen" data-tab="people" data-step="4">
+  <div class="wf-s__head"><span class="wf-s__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13"/><path d="M6 11.5l1-3 3.2-3.2 2 2L9 10.5z"/></svg></span><div class="wf-s__t"><strong>Employee Forms</strong><span>Onboarding to offboarding, all in one place.</span></div><span class="wf-cta">Send forms<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+  <div class="wf-stats"><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span>Forms assigned</span></div><strong class="wf-stat__v">24</strong><div class="wf-stat__ft"><span class="wf-up"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12V4M4.5 7.5 8 4l3.5 3.5"/></svg>20%</span><span>vs. last month</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M5.5 8l1.8 1.8L10.8 6"/></svg><span>Completed</span></div><strong class="wf-stat__v">18</strong><div class="wf-stat__ft"><span class="wf-prog__l">75%</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--ok" style="width:75%"></i></span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg><span>Pending</span></div><strong class="wf-stat__v">4</strong><div class="wf-stat__ft"><span class="wf-prog__l">17%</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--warn" style="width:17%"></i></span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 13a4.5 4.5 0 0 1 9 0M10.5 3a2.5 2.5 0 0 1 0 5M12 9a4 4 0 0 1 2.5 4"/></svg><span>Overdue</span></div><strong class="wf-stat__v">2</strong><div class="wf-stat__ft"><span class="wf-prog__l">8%</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--bad" style="width:8%"></i></span></div></div></div>
+  <div class="wf-panels"><div class="wf-panel "><div class="wf-panel__hd"><span>Form Library</span><span class="wf-sel">Assign forms<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><ul class="wf-list"><li class="wf-row "><svg class="wf-i wf-row__ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span class="wf-row__t"><b>W-4</b><small>Federal Withholding</small></span><span class="wf-pill wf-pill--ok">Required</span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><svg class="wf-i wf-row__ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span class="wf-row__t"><b>I-9</b><small>Employment Eligibility</small></span><span class="wf-pill wf-pill--ok">Required</span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><svg class="wf-i wf-row__ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span class="wf-row__t"><b>Direct Deposit</b><small>Bank Account Setup</small></span><span class="wf-pill wf-pill--ok">Required</span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><svg class="wf-i wf-row__ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg><span class="wf-row__t"><b>State Tax Form</b><small>State Withholding</small></span><span class="wf-pill wf-pill--dim">Optional</span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li></ul></div><div class="wf-panel "><div class="wf-panel__hd"><span>Employee Status</span><span class="wf-sel">All employees<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><ul class="wf-list"><li class="wf-row "><span class="wf-av">JD</span><span class="wf-row__t"><b>Jordan Diaz</b></span><span class="wf-row__p"><span class="wf-prog__l">6/6 complete</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--ok" style="width:100%"></i></span></span><svg class="wf-i wf-row__c is-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg></li><li class="wf-row "><span class="wf-av">SL</span><span class="wf-row__t"><b>Sarah Lee</b></span><span class="wf-row__p"><span class="wf-prog__l">5/6 complete</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--ok" style="width:83%"></i></span></span><svg class="wf-i wf-row__c is-ok" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg></li><li class="wf-row "><span class="wf-av">MK</span><span class="wf-row__t"><b>Marcus Kim</b></span><span class="wf-row__p"><span class="wf-prog__l">3/6 complete</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--warn" style="width:50%"></i></span></span><svg class="wf-i wf-row__c " viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg></li><li class="wf-row "><span class="wf-av">EP</span><span class="wf-row__t"><b>Emily Park</b></span><span class="wf-row__p"><span class="wf-prog__l">1/6 complete</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--bad" style="width:16%"></i></span></span><svg class="wf-i wf-row__c " viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg></li></ul><span class="wf-link">View all employees<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></div>
+  
+</div><div class="wf-screen" data-tab="compliance" data-step="5">
+  <div class="wf-s__head"><span class="wf-s__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 2.5 4v4c0 3.2 2.3 5.6 5.5 6.5 3.2-.9 5.5-3.3 5.5-6.5V4z"/><path d="M5.8 8l1.6 1.6L10.5 6.5"/></svg></span><div class="wf-s__t"><strong>Compliance</strong><span>Stay ahead, automatically.</span></div><span class="wf-cta">Run checks<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+  <div class="wf-stats"><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 11V7a4 4 0 0 1 8 0v4l1 1.5H3z"/><path d="M6.5 14a1.5 1.5 0 0 0 3 0"/></svg><span>Open alerts</span></div><strong class="wf-stat__v">3</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--warn"></i><span>2 need review</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><span>Deadlines</span></div><strong class="wf-stat__v">5</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--dim"></i><span>Next: Apr 15</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M5.5 8l1.8 1.8L10.8 6"/></svg><span>Policy checks</span></div><strong class="wf-stat__v">42/42</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--ok"></i><span>All passing</span></div></div><div class="wf-stat"><div class="wf-stat__lb"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 2.5 4v4c0 3.2 2.3 5.6 5.5 6.5 3.2-.9 5.5-3.3 5.5-6.5V4z"/><path d="M5.8 8l1.6 1.6L10.5 6.5"/></svg><span>Risk level</span></div><strong class="wf-stat__v">Low</strong><div class="wf-stat__ft"><i class="wf-dot wf-dot--ok"></i><span>Updated today</span></div></div></div>
+  <div class="wf-panels"><div class="wf-panel "><div class="wf-panel__hd"><span>Compliance score</span><span class="wf-sel">This quarter<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></span></div><div class="wf-split"><svg class="wf-donut wf-donut--md" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" class="wf-donut__track"/><g transform="rotate(-90 50 50)"><circle cx="50" cy="50" r="40" pathLength="100" stroke-dasharray="96 100" class="wf-donut__ring"/></g><text x="50" y="50" text-anchor="middle" dominant-baseline="central" class="wf-donut__t">96%</text></svg><ul class="wf-scores"><li class="wf-score"><span>Federal filings</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--ok" style="width:100%"></i></span><b>100%</b></li><li class="wf-score"><span>State registrations</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--ok" style="width:96%"></i></span><b>96%</b></li><li class="wf-score"><span>Local notices</span><span class="wf-prog"><i class="wf-prog__b wf-prog__b--ok" style="width:92%"></i></span><b>92%</b></li></ul></div></div><div class="wf-panel wf-panel--wide"><div class="wf-panel__hd"><span>Active alerts</span><span class="wf-link">View all<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div><ul class="wf-list"><li class="wf-row "><i class="wf-dot wf-dot--warn wf-row__dot"></i><span class="wf-row__t"><b>CA minimum wage update</b><small>Effective Jan 1 &middot; 3 employees affected</small></span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><i class="wf-dot wf-dot--warn wf-row__dot"></i><span class="wf-row__t"><b>I-9 reverification due</b><small>Marcus Kim &middot; due Apr 2</small></span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li><li class="wf-row "><i class="wf-dot wf-dot--ok wf-row__dot"></i><span class="wf-row__t"><b>Form 941 accepted</b><small>Q4 2024 &middot; confirmed by IRS</small></span><svg class="wf-i wf-row__c" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></li></ul></div></div>
+  <div class="wf-panel "><div class="wf-panel__hd"><span>Audit trail</span><span class="wf-link">Export<svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div><ul class="wf-list wf-list--tight"><li class="wf-row "><span class="wf-row__d">Mar 12, 2025</span><span class="wf-row__t"><b>Payroll approved</b></span><span class="wf-row__s">Jordan D.</span><span class="wf-pill wf-pill--dim">Logged</span></li><li class="wf-row "><span class="wf-row__d">Mar 10, 2025</span><span class="wf-row__t"><b>W-4 updated</b></span><span class="wf-row__s">Sarah L.</span><span class="wf-pill wf-pill--dim">Logged</span></li><li class="wf-row "><span class="wf-row__d">Mar 08, 2025</span><span class="wf-row__t"><b>State filing submitted</b></span><span class="wf-row__s">CA DE 9</span><span class="wf-pill wf-pill--dim">Logged</span></li></ul></div>
+</div></div>
+                  </div>
+                </div>
+                <p class="wf-note" aria-hidden="true"><svg class="wf-note__arrow" viewBox="0 0 40 40"><path d="M6 36C10 22 16 12 32 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M25 5.5 32 6l-1 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wf-swap"><span class="wf-swap__item is-active" data-step="0">All your payroll<br>in one place.</span><span class="wf-swap__item" data-step="1">File and track<br>every tax, in one place.</span><span class="wf-swap__item" data-step="2">From clock in<br>to payroll, all in one place.</span><span class="wf-swap__item" data-step="3">A healthier team<br>builds a brighter tomorrow.</span><span class="wf-swap__item" data-step="4">Onboarding to<br>offboarding, simplified.</span><span class="wf-swap__item" data-step="5">Stay ahead of every rule,<br>automatically.</span></span></p>
+              </div>
+            </div>
+
+            <div class="wf__right" id="wf-cards"><a class="wf-card is-active stagger-item" data-delay="0.30s" data-step="0" href="payroll-management.html"><span class="wf-card__n">01</span><span class="wf-card__arrow"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="wf-card__body"><span class="wf-card__t"><b>Run Payroll</b><small>Process pay in minutes.</small></span><svg class="wf-card__bars" viewBox="0 0 44 28" aria-hidden="true"><rect x="2" y="16" width="6" height="12" rx="1.5"/><rect x="11" y="10" width="6" height="18" rx="1.5"/><rect x="20" y="4" width="6" height="24" rx="1.5" class="hi"/><rect x="29" y="12" width="6" height="16" rx="1.5" class="hi"/><rect x="38" y="6" width="6" height="22" rx="1.5" class="hi"/></svg></span></a><a class="wf-card stagger-item" data-delay="0.38s" data-step="1" href="tax-filing.html"><span class="wf-card__n">02</span><span class="wf-card__arrow"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="wf-card__body"><span class="wf-card__t"><b>Tax Filing</b><small>Federal, state, and local.</small></span><span class="wf-card__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h4M6 11h4"/></svg></span></span></a><a class="wf-card stagger-item" data-delay="0.46s" data-step="2" href="time-tracking.html"><span class="wf-card__n">03</span><span class="wf-card__arrow"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="wf-card__body"><span class="wf-card__t"><b>Time Tracking</b><small>Hours flow straight to pay.</small></span><span class="wf-card__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg></span></span></a><a class="wf-card stagger-item" data-delay="0.54s" data-step="3" href="#services"><span class="wf-card__n">04</span><span class="wf-card__arrow"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="wf-card__body"><span class="wf-card__t"><b>Benefits</b><small>Deductions, made simple.</small></span><span class="wf-card__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.3-5.5-7A3 3 0 0 1 8 4.7a3 3 0 0 1 5.5 1.8c0 3.7-5.5 7-5.5 7z"/></svg></span></span></a><a class="wf-card stagger-item" data-delay="0.62s" data-step="4" href="#instrument"><span class="wf-card__n">05</span><span class="wf-card__arrow"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="wf-card__body"><span class="wf-card__t"><b>Employee Forms</b><small>Onboarding to offboarding.</small></span><span class="wf-card__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 13a4.5 4.5 0 0 1 9 0M10.5 3a2.5 2.5 0 0 1 0 5M12 9a4 4 0 0 1 2.5 4"/></svg></span></span></a><a class="wf-card stagger-item" data-delay="0.70s" data-step="5" href="#services"><span class="wf-card__n">06</span><span class="wf-card__arrow"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="wf-card__body"><span class="wf-card__t"><b>Compliance</b><small>Stay ahead, automatically.</small></span><span class="wf-card__ic"><svg class="wf-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 2.5 4v4c0 3.2 2.3 5.6 5.5 6.5 3.2-.9 5.5-3.3 5.5-6.5V4z"/><path d="M5.8 8l1.6 1.6L10.5 6.5"/></svg></span></span></a></div>
+            <svg class="wf-wires stagger-item" data-delay="0.8s" id="wf-wires" aria-hidden="true"></svg>
+          </div>
+
+          <div class="wf__foot rise">
+            <span class="eyebrow wf__foot-tag"><span class="wf__rule" aria-hidden="true"></span>built for what&rsquo;s next<span class="wf__rule" aria-hidden="true"></span></span>
+            <span class="eyebrow">wagepress.com</span>
           </div>
         </div>
       </section>
 
       <!-- 03 Packages -->
       <section id="services" class="services on-paper">
-        <span class="eyebrow services__plus left" aria-hidden="true">+</span>
-        <span class="eyebrow services__plus right" aria-hidden="true">+</span>
         <div class="services__inner">
-          <div class="bento stagger">
-            <div class="bento__intro span-8 stagger-item">
-              <p class="eyebrow"><span class="idx-tag accent">03</span> — start here</p>
-              <div>
-                <h2 class="font-display lines">
-                  <span class="line"><span>Everything payroll, <em>one price</em>.</span></span>
-                </h2>
-                <p>( the price grows with your team, nothing else. ) payroll, time tracking, tax filing and payments, built as one product, so nothing gets re-typed between systems. there are no other systems. accountants, yes; re-typing, no.</p>
-              </div>
+          <div class="svc stagger">
+            <div class="svc__intro">
+              <p class="svc__eyebrow stagger-item"><span class="svc__idx">03</span><span class="eyebrow">— start here</span></p>
+              <h2 class="font-display stagger-item">Everything payroll,<br><em>one price.</em></h2>
+              <p class="svc__desc stagger-item">The price grows with your team, nothing else. Payroll, time tracking, tax filing and payments, built as one product, so nothing gets re-typed between systems. There are no other systems, accountants, yes; re-typing, no.</p>
             </div>
 
-            <div class="bento__cell group span-4 stagger-item">
-              <span class="eyebrow num">01</span>
-              <h3 class="font-display">Payroll</h3>
-              <p>scheduled, calculated, paid</p>
-            </div>
-            <div class="bento__cell group span-4 stagger-item">
-              <span class="eyebrow num">02</span>
-              <h3 class="font-display">Time tracking</h3>
-              <p>hours in, paystubs out</p>
-            </div>
-            <div class="bento__cell group span-8 stagger-item">
-              <span class="eyebrow num">03</span>
-              <h3 class="font-display">Tax e-filing</h3>
-              <p>forms with a deadline, met</p>
-              <ul class="chips">
-                <li class="eyebrow">1099 family</li>
-                <li class="eyebrow">W-2 &amp; W-2PR</li>
-                <li class="eyebrow">940 · 941 · 943 · 944 · 945</li>
-                <li class="eyebrow">state &amp; 1095-B</li>
-              </ul>
-            </div>
-            <div class="bento__cell group span-8 stagger-item">
-              <span class="eyebrow num">04</span>
-              <h3 class="font-display">Payments &amp; wallet</h3>
-              <p>the money side, made to move itself</p>
-              <ul class="chips">
-                <li class="eyebrow">direct deposit</li>
-                <li class="eyebrow">bank linking &amp; ACH</li>
-                <li class="eyebrow">tax payments</li>
-                <li class="eyebrow">business wallet</li>
-              </ul>
-            </div>
-            <div class="bento__cell group span-4 stagger-item">
-              <span class="eyebrow num">05</span>
-              <h3 class="font-display">Compliance</h3>
-              <p>the part auditors remember</p>
-            </div>
-            <div class="bento__cell group span-12 stagger-item">
-              <span class="eyebrow num">06</span>
-              <h3 class="font-display">Support &amp; migration</h3>
-              <p>we do not disappear after onboarding</p>
-              <ul class="chips">
-                <li class="eyebrow">switch from any provider</li>
-                <li class="eyebrow">bulk employee import</li>
-                <li class="eyebrow">accountant access</li>
-                <li class="eyebrow">deadline reminders</li>
-              </ul>
-            </div>
-          </div>
-          <div class="services__foot">
-            <a class="eyebrow link-underline" href="#contact">see the packages →</a>
+            <article class="svc-card svc-card--hero stagger-item">
+                <span class="svc-card__n">01</span>
+                <span class="svc-card__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v11M14.8 9.2a2.6 2.6 0 0 0-2.6-1.7h-.6a2.2 2.2 0 0 0 0 4.4h1a2.2 2.2 0 0 1 0 4.4h-.8a2.6 2.6 0 0 1-2.6-1.7"/></svg></span>
+                <div class="svc-card__body">
+                  <h3 class="font-display">Payroll</h3>
+                  <p>Scheduled, calculated, paid.</p>
+                  
+                </div>
+                <div class="svc-ill svc-ill--payroll" aria-hidden="true">
+  <i class="svc-blob"></i>
+  <div class="svc-list">
+    <span><i class="svc-list__av"></i><b></b><b></b></span>
+    <span><i class="svc-list__av a2"></i><b></b><b></b></span>
+    <span><i class="svc-list__av a3"></i><b></b><b></b></span>
+  </div>
+  <div class="svc-phone"><span class="svc-check"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 8"/></svg></span></div>
+  <div class="svc-toast"><span class="svc-check svc-check--sm"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 8"/></svg></span>Payroll complete</div>
+</div>
+              </article>
+            <article class="svc-card svc-card--half stagger-item">
+                <span class="svc-card__n">02</span>
+                <span class="svc-card__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+                <div class="svc-card__body">
+                  <h3 class="font-display">Time tracking</h3>
+                  <p>Hours in, paystubs out.</p>
+                  
+                </div>
+                <div class="svc-ill svc-ill--time" aria-hidden="true">
+  <div class="svc-mini">
+    <span class="svc-mini__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+    <b>Track time</b>
+    <svg class="svc-mini__bars" viewBox="0 0 56 40"><rect x="0" y="12" width="9" height="28" rx="3" class="hi"/><rect x="13" y="4" width="9" height="36" rx="3" class="hi"/><rect x="26" y="16" width="9" height="24" rx="3" class="hi"/><rect x="39" y="8" width="9" height="32" rx="3"/><rect x="52" y="20" width="4" height="20" rx="2"/></svg>
+  </div>
+</div>
+              </article>
+            <article class="svc-card svc-card--half stagger-item">
+                <span class="svc-card__n">03</span>
+                <span class="svc-card__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
+                <div class="svc-card__body">
+                  <h3 class="font-display">Tax e-filing</h3>
+                  <p>Forms with a deadline, met.</p>
+                  <ul class="svc-chips"><li>1099 family</li><li>W-2 &amp; W-2PR</li><li>940 &middot; 941 &middot; 943 &middot; 944 &middot; 945</li><li>State &amp; 1095-B</li></ul>
+                </div>
+                
+              </article>
+            <article class="svc-card svc-card--half stagger-item">
+                <span class="svc-card__n">04</span>
+                <span class="svc-card__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10.5h18M7 15h4"/></svg></span>
+                <div class="svc-card__body">
+                  <h3 class="font-display">Payments &amp; wallet</h3>
+                  <p>The money side, made to move itself.</p>
+                  <ul class="svc-chips"><li>Direct deposit</li><li>Bank linking &amp; ACH</li><li>Tax payments</li><li>Business wallet</li></ul>
+                </div>
+                
+              </article>
+            <article class="svc-card svc-card--half stagger-item">
+                <span class="svc-card__n">05</span>
+                <span class="svc-card__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.4 3.1 7.7 7.5 9 4.4-1.3 7.5-4.6 7.5-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
+                <div class="svc-card__body">
+                  <h3 class="font-display">Compliance</h3>
+                  <p>The part auditors remember.</p>
+                  
+                </div>
+                <div class="svc-ill svc-ill--compliance" aria-hidden="true">
+  <i class="svc-blob svc-blob--sm"></i>
+  <div class="svc-doc"><b></b><b></b><b></b><b class="short"></b></div>
+  <span class="svc-shield"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.4 3.1 7.7 7.5 9 4.4-1.3 7.5-4.6 7.5-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
+</div>
+              </article>
+            <article class="svc-card svc-card--wide stagger-item">
+                <span class="svc-card__n">06</span>
+                <span class="svc-card__ic"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M15.5 5.5a3.2 3.2 0 0 1 0 6M17.5 14.5A6 6 0 0 1 21 20"/></svg></span>
+                <div class="svc-card__body">
+                  <h3 class="font-display">Support &amp; migration</h3>
+                  <p>We do not disappear after onboarding.</p>
+                  <ul class="svc-chips"><li>Switch from any provider</li><li>Bulk employee import</li><li>Accountant access</li><li>Deadline reminders</li></ul>
+                </div>
+                <div class="svc-ill svc-ill--support" aria-hidden="true">
+  <span class="svc-av"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+  <svg class="svc-arrow" viewBox="0 0 40 12"><path d="M2 6h26" stroke-dasharray="3 4"/><path d="M26 2l6 4-6 4"/></svg>
+  <span class="svc-av svc-av--on"><svg class="svc-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+  <span class="svc-hand"><svg viewBox="0 0 24 18" class="svc-hand__tick"><path d="M3 15 20 3"/></svg>We&rsquo;ve<br>got you.</span>
+</div>
+              </article>
           </div>
         </div>
       </section>
@@ -299,10 +392,10 @@
         <div class="lab__inner">
           <div class="lab__head">
             <div>
-              <p class="eyebrow section-eyebrow"><span class="idx-tag accent">04</span> — the tools</p>
+              <p class="eyebrow section-eyebrow rise"><span class="idx-tag accent">04</span> — the tools</p>
               <h2 class="font-display lines"><span class="line"><span>Free, on the bench.</span></span></h2>
             </div>
-            <p class="lab__desc">small calculators we built to answer the questions clients ask in meetings. free, in the browser, no sign-up. the same math that runs your payroll.</p>
+            <p class="lab__desc rise">small calculators we built to answer the questions clients ask in meetings. free, in the browser, no sign-up. the same math that runs your payroll.</p>
           </div>
         </div>
 
@@ -414,13 +507,13 @@
               </li>
             </ul>
 
-            <p class="eyebrow lab-reel__count"><span id="lab-reel-current">01</span> / 04</p>
-            <div class="lab-reel__bar"><span class="lab-reel__bar-fill" id="lab-reel-fill"></span></div>
+            <p class="eyebrow lab-reel__count rise"><span id="lab-reel-current">01</span> / 04</p>
+            <div class="lab-reel__bar rise"><span class="lab-reel__bar-fill" id="lab-reel-fill"></span></div>
           </div>
         </div>
 
         <div class="lab__inner">
-          <div class="lab__foot">
+          <div class="lab__foot rise">
             <span class="eyebrow">( toys, but load-bearing: the paystub math is the production math )</span>
             <a class="eyebrow link-underline" href="#lab">the whole bench ↗</a>
           </div>
@@ -431,45 +524,45 @@
       <section id="compare" class="compare">
         <div class="compare__inner">
           <div class="compare__head">
-            <p class="eyebrow section-eyebrow"><span class="idx-tag accent">05</span> — why wagepress</p>
+            <p class="eyebrow section-eyebrow rise"><span class="idx-tag accent">05</span> — why wagepress</p>
             <h2 class="font-display lines"><span class="line"><span>Compared to the <em>old way</em>.</span></span></h2>
-            <p class="compare__desc">spreadsheets get errors. other payroll tools get you a contract, then an upsell for every form you file. line by line, here's the difference.</p>
+            <p class="compare__desc rise">spreadsheets get errors. other payroll tools get you a contract, then an upsell for every form you file. line by line, here's the difference.</p>
           </div>
 
-          <p class="eyebrow compare__hint">swipe for more →</p>
+          <p class="eyebrow compare__hint rise">swipe for more →</p>
 
           <div class="compare__body">
             <div class="compare__labelcol">
               <div class="compare__spacer" aria-hidden="true">
-                <span class="compare__mark-wordmark brand"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></span>
+                <span class="compare__mark-wordmark brand rise"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></span>
               </div>
-              <div class="compare__labels">
-                <div class="compare__row">Payroll runs itself</div>
-                <div class="compare__row">Time tracking built in</div>
-                <div class="compare__row">1099 / W-2 / 940 / 941 e-filing</div>
-                <div class="compare__row">Direct deposit &amp; wallet</div>
-                <div class="compare__row">State unemployment filing</div>
-                <div class="compare__row">Accountant access</div>
-                <div class="compare__row">Bulk employee import</div>
-                <div class="compare__row">Deadline reminders</div>
-                <div class="compare__row">Free calculators</div>
-                <div class="compare__row">No setup fees or contracts</div>
+              <div class="compare__labels stagger">
+                <div class="compare__row stagger-item">Payroll runs itself</div>
+                <div class="compare__row stagger-item">Time tracking built in</div>
+                <div class="compare__row stagger-item">1099 / W-2 / 940 / 941 e-filing</div>
+                <div class="compare__row stagger-item">Direct deposit &amp; wallet</div>
+                <div class="compare__row stagger-item">State unemployment filing</div>
+                <div class="compare__row stagger-item">Accountant access</div>
+                <div class="compare__row stagger-item">Bulk employee import</div>
+                <div class="compare__row stagger-item">Deadline reminders</div>
+                <div class="compare__row stagger-item">Free calculators</div>
+                <div class="compare__row stagger-item">No setup fees or contracts</div>
               </div>
             </div>
 
             <div class="compare__scroll">
-              <div class="compare__plans">
-                <div class="compare__plan">
+              <div class="compare__plans stagger">
+                <div class="compare__plan stagger-item">
                   <h3 class="font-display">Spread<br>sheets</h3>
                   <span class="compare__rule" aria-hidden="true"></span>
                   <p class="compare__sub">manual, error-prone</p>
                 </div>
-                <div class="compare__plan">
+                <div class="compare__plan stagger-item">
                   <h3 class="font-display">Other<br>payroll tools</h3>
                   <span class="compare__rule" aria-hidden="true"></span>
                   <p class="compare__sub">a contract, then upsells</p>
                 </div>
-                <div class="compare__plan compare__plan--us">
+                <div class="compare__plan compare__plan--us stagger-item">
                   <h3 class="font-display">Wage<br>press</h3>
                   <span class="compare__rule" aria-hidden="true"></span>
                   <p class="compare__sub">one login, no contract</p>
@@ -477,46 +570,46 @@
                 </div>
               </div>
 
-              <div class="compare__table">
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+              <div class="compare__table stagger">
+                <div class="compare__cellNone stagger-item" data-delay="0.00s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.00s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.00s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.07s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.07s"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.07s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.14s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.14s"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.14s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.21s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.21s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.21s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.28s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.28s"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.28s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
-                <div class="compare__cell"><span class="mark mark--note">extra cost</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.35s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.35s"><span class="mark mark--note">extra cost</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.35s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.42s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.42s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.42s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.49s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.49s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.49s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
 
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--note mark--free">free</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.56s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.56s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.56s"><span class="mark mark--note mark--free">free</span></div>
 
-                <div class="compare__cell"><span class="mark mark--yes" aria-label="Included">✓</span></div>
-                <div class="compare__cell"><span class="mark mark--no" aria-label="Not included">✕</span></div>
-                <div class="compare__cell compare__cell--us"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.63s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
+                <div class="compare__cellNone stagger-item" data-delay="0.63s"><span class="mark mark--no" aria-label="Not included">✕</span></div>
+                <div class="compare__cell compare__cell--us stagger-item" data-delay="0.63s"><span class="mark mark--yes" aria-label="Included">✓</span></div>
               </div>
             </div>
           </div>
@@ -529,16 +622,16 @@
           <div class="instrument__card">
             <div class="instrument__grid">
               <div class="instrument__text">
-                <p class="eyebrow instrument__live"><span class="idx-tag">wagepress<sup>®</sup></span>irs authorized e-file</p>
+                <p class="eyebrow instrument__live rise"><span class="idx-tag">wagepress<sup>®</sup></span>irs authorized e-file</p>
                 <h2 class="font-display lines">
                   <span class="line"><span>We built an</span></span>
                   <span class="line"><span><em>e-file engine.</em></span></span>
                 </h2>
-                <p class="instrument__desc">ours, under the same roof as everything above: WagePress takes your payroll data and turns it into signed, validated returns that go straight to the IRS. no re-typing, no third-party filer, and a status you can check the moment it lands.</p>
-                <p class="eyebrow instrument__fx">1099 · w-2 · 94x · 1095-b · state · twc</p>
-                <a class="eyebrow instrument__cta" href="https://dev-company.wagepress.com/signup" target="_blank" rel="noreferrer" data-cursor="view">start filing ↗</a>
+                <p class="instrument__desc rise">ours, under the same roof as everything above: WagePress takes your payroll data and turns it into signed, validated returns that go straight to the IRS. no re-typing, no third-party filer, and a status you can check the moment it lands.</p>
+                <p class="eyebrow instrument__fx rise">1099 · w-2 · 94x · 1095-b · state · twc</p>
+                <a class="eyebrow instrument__cta rise" href="https://dev-company.wagepress.com/signup" target="_blank" rel="noreferrer" data-cursor="view">start filing ↗</a>
               </div>
-              <figure class="instrument__figure">
+              <figure class="instrument__figure reveal">
                 <div class="browser" id="tour-frame">
                   <div class="browser__bar">
                     <span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -573,20 +666,20 @@
         <div class="contact__inner">
           <div class="contact__grid">
             <div class="contact__lead">
-              <p class="eyebrow section-eyebrow"><span class="idx-tag accent">05</span> — say hi anytime</p>
+              <p class="eyebrow section-eyebrow rise"><span class="idx-tag accent">05</span> — say hi anytime</p>
               <h2 class="font-display lines">
                 <span class="line"><span>Bring us the</span></span>
                 <span class="line"><span><em>messy payroll.</em></span></span>
               </h2>
-              <p class="contact__desc">the spreadsheet with forty tabs. the quarter that was never filed. the team that grew faster than the process. as established above, one login handles all of it.</p>
+              <p class="contact__desc rise">the spreadsheet with forty tabs. the quarter that was never filed. the team that grew faster than the process. as established above, one login handles all of it.</p>
             </div>
 
-            <form class="contact__form" id="contact-form" novalidate>
+            <form class="contact__form stagger" id="contact-form" novalidate>
               <div class="honeypot" aria-hidden="true">
                 <label>website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
               </div>
 
-              <div class="form-row">
+              <div class="form-row stagger-item">
                 <label class="field">
                   <span class="eyebrow">from</span>
                   <input class="input" type="text" name="name" autocomplete="name" required placeholder="your name">
@@ -597,7 +690,7 @@
                 </label>
               </div>
 
-              <fieldset data-chips="multi" data-name="regarding">
+              <fieldset class="stagger-item" data-chips="multi" data-name="regarding">
                 <legend class="eyebrow">regarding</legend>
                 <div class="chip-row">
                   <button type="button" class="eyebrow chip" aria-pressed="false">payroll</button>
@@ -610,7 +703,7 @@
                 </div>
               </fieldset>
 
-              <fieldset data-chips="prompt">
+              <fieldset class="stagger-item" data-chips="prompt">
                 <legend class="eyebrow">start with</legend>
                 <div class="chip-row">
                   <button type="button" class="eyebrow chip" data-topic="payroll" data-seed="We run payroll by hand today and want it automated. Our team is ">we do payroll in a spreadsheet</button>
@@ -620,12 +713,12 @@
                 </div>
               </fieldset>
 
-              <label class="field mt">
+              <label class="field mt stagger-item">
                 <span class="eyebrow">where things stand, in your words</span>
                 <textarea class="input" name="message" rows="4" required placeholder="a few honest lines about your team and your payroll…"></textarea>
               </label>
 
-              <fieldset data-chips="single" data-name="team">
+              <fieldset class="stagger-item" data-chips="single" data-name="team">
                 <legend class="eyebrow">team size — optional</legend>
                 <div class="chip-row">
                   <button type="button" class="eyebrow chip tabular" aria-pressed="false">1 – 50</button>
@@ -635,7 +728,7 @@
                 </div>
               </fieldset>
 
-              <div class="contact__actions">
+              <div class="contact__actions stagger-item">
                 <span class="magnetic"><button type="submit" class="eyebrow btn-primary">send it over</button></span>
                 <span class="contact__status" id="contact-status" role="status" aria-live="polite">A real person replies, not a bot.</span>
                 <a class="eyebrow link-underline contact__mail" href="mailto:hello@wagepress.com">or just email hello@wagepress.com</a>
@@ -650,20 +743,20 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer__top">
-      <div class="footer__brand">
+    <div class="footer__top stagger">
+      <div class="footer__brand stagger-item">
         <a class="footer__logo brand" href="#" aria-label="WagePress — home"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></a>
         <p class="footer__tag font-display">Smart tools for smarter businesses. No setup fees, no contracts.</p>
       </div>
-      <nav class="footer__nav" aria-label="Pages">
-        <a class="eyebrow link-underline" href="#work">/payroll</a>
-        <a class="eyebrow link-underline" href="#work">/time-tracking</a>
-        <a class="eyebrow link-underline" href="#apps">/tax-filing</a>
-        <a class="eyebrow link-underline" href="#services">/packages</a>
+      <nav class="footer__nav stagger-item" aria-label="Pages">
+        <a class="eyebrow link-underline" href="payroll-management.html">/payroll</a>
+        <a class="eyebrow link-underline" href="time-tracking.html">/time-tracking</a>
+        <a class="eyebrow link-underline" href="tax-filing.html">/tax-filing</a>
+        <a class="eyebrow link-underline" href="packages.html">/packages</a>
         <a class="eyebrow link-underline" href="#lab">/tools</a>
-        <a class="eyebrow link-underline" href="#contact">/contact</a>
+        <a class="eyebrow link-underline" href="contact.html">/contact</a>
       </nav>
-      <nav class="footer__nav" aria-label="Elsewhere">
+      <nav class="footer__nav stagger-item" aria-label="Elsewhere">
         <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Facebook ↗</a>
         <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
         <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
@@ -672,7 +765,7 @@
       </nav>
     </div>
 
-    <div class="footer__news">
+    <div class="footer__news rise">
       <form id="news-form" novalidate>
         <label class="block">
           <span class="eyebrow">One payroll note a month. Deadlines, rate changes, and the odd shortcut.</span>
@@ -684,7 +777,7 @@
       </form>
     </div>
 
-    <div class="footer__awards">
+    <div class="footer__awards rise">
       <p class="eyebrow">Trust</p>
       <nav aria-label="Trust">
         <div class="award">
@@ -702,7 +795,7 @@
       </nav>
     </div>
 
-    <div class="footer__legal">
+    <div class="footer__legal rise">
       <p class="eyebrow">© 2025 WagePress. All rights reserve<b>D</b></p>
       <nav aria-label="Legal">
         <a class="eyebrow link-underline" href="#">Privacy Policy</a>

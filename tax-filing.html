@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tax Filing — WagePress</title>
+  <meta name="description" content="1099, W-2 and 94x forms e-filed straight with the IRS. WagePress is an IRS-authorized e-file provider — find the exact form you owe and its due date in three taps.">
+  <meta name="theme-color" content="#0b1526">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Urbanist:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="wp-mark" viewBox="0 0 129 124"><g transform="translate(60 109) rotate(180)"><path fill="currentColor" d="M1 0 L60 23.6 L60 55.6 L46 61.2 L46 33.5 L1 15.5 Z"/><path fill="currentColor" d="M23 33.45 L37 39.05 L37 80.8 L23 86.4 Z"/><path fill="currentColor" d="M0 24.5 L14 30.1 L14 102.95 L0 108.55 Z"/></g><g transform="translate(69 15)"><path fill="#2ef2b3" d="M1 0 L60 23.6 L60 55.6 L46 61.2 L46 33.5 L1 15.5 Z"/><path fill="#2ef2b3" d="M23 33.45 L37 39.05 L37 80.8 L23 86.4 Z"/><path fill="#2ef2b3" d="M0 24.5 L14 30.1 L14 102.95 L0 108.55 Z"/></g></symbol>
+  </svg>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <a href="#content" class="skip-link eyebrow">skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="logo brand" href="index.html" aria-label="WagePress — home"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="eyebrow" href="index.html">Home</a>
+        <a class="eyebrow" href="index.html#work">About Us</a>
+        <div class="nav-drop">
+          <button type="button" class="eyebrow nav-drop__btn" aria-expanded="false" aria-controls="nav-drop-services">Services<svg class="nav-drop__chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-drop__panel" id="nav-drop-services">
+            <a class="nav-drop__link" href="payroll-management.html">Payroll Management</a>
+            <a class="nav-drop__link" href="time-tracking.html">Time Tracking</a>
+            <a class="nav-drop__link" href="tax-filing.html">Tax Filing</a>
+          </div>
+        </div>
+        <a class="eyebrow" href="packages.html">Packages</a>
+        <a class="eyebrow" href="contact.html">Contact</a>
+        <a class="eyebrow is-ghost" href="#instrument" aria-hidden="true" tabindex="-1">sign in ↗</a>
+      </nav>
+      <button type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="io-link-wrap">
+    <a class="eyebrow" href="https://dev-company.wagepress.com/" target="_blank" rel="noreferrer">sign in ↗</a>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+    <nav>
+      <a class="font-display" href="index.html"><span class="eyebrow">01</span><span>Home</span></a>
+      <a class="font-display" href="index.html#work"><span class="eyebrow">02</span><span>About Us</span></a>
+      <div class="mobile-menu__drop">
+        <button type="button" class="font-display mobile-menu__drop-btn" aria-expanded="false" aria-controls="mobile-drop-services">
+          <span class="eyebrow">03</span><span>Services</span>
+          <svg class="mobile-menu__drop-btn__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-menu__drop-panel" id="mobile-drop-services">
+          <a href="payroll-management.html">Payroll Management</a>
+          <a href="time-tracking.html">Time Tracking</a>
+          <a href="tax-filing.html">Tax Filing</a>
+        </div>
+      </div>
+      <a class="font-display" href="packages.html"><span class="eyebrow">04</span><span>Packages</span></a>
+      <a class="font-display" href="contact.html"><span class="eyebrow">05</span><span>Contact</span></a>
+    </nav>
+    <a class="eyebrow mobile-menu__io" href="https://dev-company.wagepress.com/" target="_blank" rel="noreferrer">sign in ↗</a>
+    <a class="eyebrow link-underline mobile-menu__mail" href="mailto:hello@wagepress.com">hello@wagepress.com</a>
+  </div>
+
+  <div id="content">
+    <main>
+
+      <!-- Page hero -->
+      <section class="page-hero">
+        <div class="page-hero__inner">
+          <p class="eyebrow page-hero__crumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="index.html#services">Services</a><span aria-hidden="true">/</span><span>Tax Filing</span></p>
+          <h1 class="font-display">We built our own <em>e-file engine.</em></h1>
+          <p class="page-hero__desc">WagePress takes your payroll data and turns it into signed, validated returns that go straight to the IRS — no re-typing, no third-party filer, and a status you can check the moment it lands.</p>
+          <div class="page-hero__cta">
+            <span class="magnetic"><a class="eyebrow btn-primary" href="https://dev-company.wagepress.com/signup" target="_blank" rel="noreferrer">start filing ↗</a></span>
+            <a class="eyebrow link-underline" href="contact.html">or talk to us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detail: preview + feature points -->
+      <section class="service-detail">
+        <div class="service-detail__inner">
+          <div class="browser browser--compact service-detail__frame reveal">
+            <div class="browser__bar">
+              <span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="browser__url eyebrow"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="5" width="8" height="6" rx="1.2" fill="currentColor"/></svg><span>dev-company.wagepress.com/forms-dashboard</span></span>
+              <span class="rec-dot" aria-hidden="true"></span>
+            </div>
+            <div class="work__preview-screen">
+              <video class="is-active" muted loop playsinline autoplay preload="auto" poster="assets/work/04.jpg" src="assets/work/04.mp4" aria-label="Tax filing — preview"></video>
+            </div>
+          </div>
+          <ul class="service-detail__points reveal">
+            <li><span class="spark" aria-hidden="true">✦</span>1099, W-2, 941, 940 &amp; more</li>
+            <li><span class="spark" aria-hidden="true">✦</span>Due date, calculated for you</li>
+            <li><span class="spark" aria-hidden="true">✦</span>Filing cost shown up front</li>
+            <li><span class="spark" aria-hidden="true">✦</span>IRS-authorized e-file provider</li>
+            <li><span class="spark" aria-hidden="true">✦</span>Signed, validated returns — no re-typing</li>
+            <li><span class="spark" aria-hidden="true">✦</span>Status the moment it lands</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="page-cta on-paper">
+        <div class="page-cta__inner">
+          <h2 class="font-display">File this quarter's forms today.</h2>
+          <p>Three questions. The exact form you owe. No guessing which form applies, or when it's due.</p>
+          <span class="magnetic"><a class="eyebrow btn-primary" href="https://dev-company.wagepress.com/signup" target="_blank" rel="noreferrer">start filing ↗</a></span>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="footer__logo brand" href="index.html" aria-label="WagePress — home"><svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#wp-mark"/></svg><span class="brand__word">WAGE<b>PRESS</b></span></a>
+        <p class="footer__tag font-display">Smart tools for smarter businesses. No setup fees, no contracts.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Pages">
+        <a class="eyebrow link-underline" href="payroll-management.html">/payroll</a>
+        <a class="eyebrow link-underline" href="time-tracking.html">/time-tracking</a>
+        <a class="eyebrow link-underline" href="tax-filing.html">/tax-filing</a>
+        <a class="eyebrow link-underline" href="packages.html">/packages</a>
+        <a class="eyebrow link-underline" href="index.html#lab">/tools</a>
+        <a class="eyebrow link-underline" href="contact.html">/contact</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Elsewhere">
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Facebook ↗</a>
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="eyebrow link-underline" href="#" target="_blank" rel="noreferrer">Twitter ↗</a>
+        <a class="eyebrow link-underline" href="mailto:hello@wagepress.com">hello@wagepress.com</a>
+      </nav>
+    </div>
+
+    <div class="footer__awards">
+      <p class="eyebrow">Trust</p>
+      <nav aria-label="Trust">
+        <div class="award">
+          <p class="eyebrow">IRS</p>
+          <a class="eyebrow link-underline" href="index.html#instrument">Authorized e-file provider</a>
+        </div>
+        <div class="award">
+          <p class="eyebrow">Security</p>
+          <a class="eyebrow link-underline" href="#">SOC 2 Type II</a>
+          <span class="eyebrow dot" aria-hidden="true">·</span>
+          <a class="eyebrow link-underline" href="#">256-bit SSL</a>
+          <span class="eyebrow dot" aria-hidden="true">·</span>
+          <a class="eyebrow link-underline" href="#">4.9 / 5 from 2,000+ reviews</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__legal">
+      <p class="eyebrow">© 2025 WagePress. All rights reserve<b>D</b></p>
+      <nav aria-label="Legal">
+        <a class="eyebrow link-underline" href="#">Privacy Policy</a>
+        <a class="eyebrow link-underline" href="#">Terms &amp; Conditions</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -106,6 +106,10 @@
        .lines         each .line > span y 112% → 0.9s, 0.12s apart, amount .4
      ------------------------------------------------------------------ */
   function initReveals() {
+    // IntersectionObserver does the work; a rect check on scroll backs it up so
+    // nothing can stay hidden if an observer notification is missed (sticky
+    // stages, display toggles, odd embed contexts).
+    const pending = [];
     const observe = (selector, opts) => {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
@@ -114,10 +118,30 @@
           io.unobserve(e.target);
         });
       }, opts);
-      $$(selector).forEach((el) => io.observe(el));
+      const inset = opts.rootMargin ? 0.12 : 0;
+      const share = opts.threshold || 0;
+      $$(selector).forEach((el) => { io.observe(el); pending.push({ el, io, inset, share }); });
     };
+    const sweep = () => {
+      const vh = innerHeight;
+      for (let i = pending.length - 1; i >= 0; i--) {
+        const { el, io, inset, share } = pending[i];
+        if (el.classList.contains('is-in')) { pending.splice(i, 1); continue; }
+        const r = el.getBoundingClientRect();
+        if (!r.height && !r.width) continue;
+        const top = vh * inset, bottom = vh * (1 - inset);
+        const visible = Math.min(r.bottom, bottom) - Math.max(r.top, top);
+        const need = Math.max(1, Math.min(r.height * share, vh * 0.4));
+        if (visible >= need) { el.classList.add('is-in'); io.unobserve(el); pending.splice(i, 1); }
+      }
+    };
+    let ticking = false;
+    const onScroll = () => { if (!ticking) { ticking = true; setTimeout(() => { ticking = false; sweep(); }, 40); } };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll);
+    setTimeout(sweep, 0);
     $$('.lines').forEach((el) => $$('.line > span', el).forEach((s, n) => { s.style.transitionDelay = `${(0.12 * n).toFixed(2)}s`; }));
-    $$('.stagger').forEach((w) => $$('.stagger-item', w).forEach((el, i) => { el.style.transitionDelay = `${(0.08 * i).toFixed(2)}s`; }));
+    $$('.stagger').forEach((w) => $$('.stagger-item', w).forEach((el, i) => { el.style.transitionDelay = el.dataset.delay || `${(0.08 * i).toFixed(2)}s`; }));
     observe('.reveal', { rootMargin: '-12% 0px -12% 0px', threshold: 0 });
     observe('.rise', { threshold: 0.25 });
     observe('.stagger', { threshold: 0.15 });
@@ -360,47 +384,6 @@
     return c.toDataURL('image/png');
   }
 
-  function screenDataURL(i, name) {
-    const W = 600, H = 1298;
-    const [c, x] = makeCanvas(W, H);
-    const dark = i % 3 !== 1;
-    const bg = dark ? C.ink : C.paper, fg = dark ? C.paper : C.ink;
-    const soft = dark ? 'rgba(244,245,247,0.12)' : 'rgba(16,17,19,0.08)';
-    x.fillStyle = bg; x.fillRect(0, 0, W, H);
-    x.fillStyle = fg; x.font = '600 28px "Poppins", sans-serif';
-    x.fillText('9:41', 48, 78);
-    x.fillRect(W - 110, 56, 62, 26); x.fillStyle = bg; x.fillRect(W - 106, 60, 54, 18);
-    x.fillStyle = fg; x.font = '600 64px "Manrope", sans-serif';
-    x.fillText(name, 48, 220);
-    x.font = '500 22px "Poppins", sans-serif';
-    x.fillStyle = dark ? 'rgba(244,245,247,0.55)' : C.muted;
-    x.fillText('TAX YEAR 2025 — DUE SOON', 48, 262);
-    x.fillStyle = fg; x.font = '600 120px "Manrope", sans-serif';
-    x.fillText('$' + (4 + i * 3) + 'k', 48, 460);
-    x.fillStyle = C.accent; x.fillRect(48, 500, 120 + i * 30, 8);
-    for (let k = 0; k < 4; k++) {
-      const y = 580 + k * 150;
-      x.fillStyle = soft; x.fillRect(48, y, W - 96, 118);
-      x.fillStyle = fg; x.fillRect(72, y + 32, 180 - k * 20, 12);
-      x.fillStyle = dark ? 'rgba(244,245,247,0.4)' : 'rgba(16,17,19,0.4)'; x.fillRect(72, y + 64, 260, 10);
-    }
-    x.fillStyle = soft; x.fillRect(0, H - 140, W, 140);
-    for (let k = 0; k < 4; k++) {
-      x.fillStyle = k === 0 ? C.accent : fg; x.globalAlpha = k === 0 ? 1 : 0.45;
-      x.beginPath(); x.arc(110 + k * 127, H - 82, 12, 0, Math.PI * 2); x.fill();
-    }
-    x.globalAlpha = 1;
-    return c.toDataURL('image/png');
-  }
-
-  function loadReal(img) {
-    const src = img.dataset.src;
-    if (!src) return;
-    const probe = new Image();
-    probe.onload = () => { img.src = src; };
-    probe.src = src;
-  }
-
   function initPlaceholders() {
     // module previews are real app recordings; fall back to generated art only if the poster is missing
     $$('#work-preview video, .work-item__cover video').forEach((v, i) => {
@@ -408,11 +391,6 @@
       const probe = new Image();
       probe.onerror = () => { v.poster = coverDataURL(i % 6); };
       probe.src = v.poster;
-    });
-    $$('.app-card').forEach((card, i) => {
-      const img = $('img', card);
-      img.src = screenDataURL(i, $('.app-card__name', card).textContent.trim());
-      loadReal(img);
     });
     // tool previews reuse the module recordings; if a clip fails to load the
     // screen keeps the poster as a still instead of collapsing to an empty box
@@ -455,7 +433,8 @@
       target.currentTime = 0;
       setTimeout(reveal, 350);
     };
-    $$('.work-item').forEach((it, i) => {
+    const items = $$('.work-item');
+    items.forEach((it, i) => {
       // a mouse gliding down the list sweeps across every row on the way to the one
       // the user actually wants, each briefly firing pointerenter — switching (and
       // re-seeking) on every one of those would flash a blank frame per row passed.
@@ -469,6 +448,13 @@
     // desktop: start the first preview once the section is on screen; mobile: play covers while visible
     if (previews.length && !reduced) {
       new IntersectionObserver(([e]) => { const v = previews.find((p) => p.classList.contains('is-active')); if (!v) return; if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }, { rootMargin: '120px' }).observe($('#work-preview'));
+      // while the preview sits pinned, plain scrolling — no hover needed — should
+      // still step through it one row at a time: whichever row is crossing the
+      // viewport's centre band becomes the active preview.
+      const centerIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) set(items.indexOf(entry.target)); });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+      items.forEach((it) => centerIO.observe(it));
     }
     const covers = $$('.work-item__cover video');
     if (covers.length && !reduced) {
@@ -610,6 +596,123 @@
   }
 
   /* ------------------------------------------------------------------
+     Workflow: pinned section, one dashboard screen per scroll step.
+     Same rect-driven pin as the reel; the app window is designed at a
+     fixed size and scaled to whatever room the column has.
+     ------------------------------------------------------------------ */
+  function initWorkflow() {
+    const sec = $('#workflow');
+    if (!sec) return;
+    const stage = $('.wf__stage', sec);
+    const grid = $('#wf-grid');
+    const fit = $('#wf-fit');
+    const win = $('#wf-window');
+    const wires = $('#wf-wires');
+    const head = $('.wf__head', sec);
+    const foot = $('.wf__foot', sec);
+    const screens = $$('.wf-screen', sec);
+    const steps = $$('.wf-step', sec);
+    const chips = $$('.wf-chip', sec);
+    const chipsWrap = $('#wf-chips');
+    const cards = $$('.wf-card', sec);
+    const tabs = $$('#wf-tabs span', sec);
+    const swaps = $$('.wf-swap__item', sec);
+    const n = screens.length;
+    if (!n) return;
+    const DW = parseFloat(getComputedStyle(sec).getPropertyValue('--wf-w')) || 720;
+    const DH = parseFloat(getComputedStyle(sec).getPropertyValue('--wf-h')) || 520;
+
+    // scale the window to the column: never wider than the column, never taller than the room left
+    const fitWindow = () => {
+      const w = fit.clientWidth;
+      const pad = 24 + 24 + 18;
+      const room = stage.clientHeight - (head ? head.offsetHeight : 0) - (foot && foot.offsetHeight ? foot.offsetHeight + 16 : 0) - pad - 56;
+      const wide = innerWidth >= 1024;
+      const byH = wide ? room / DH : Infinity;
+      const s = clamp(Math.min(w / DW, byH), 0.3, 1);
+      sec.style.setProperty('--wf-scale', s.toFixed(4));
+    };
+
+    // wires: a curve from the window's right edge to each card's left edge
+    const wireGroups = [];
+    const drawWires = () => {
+      if (!wires || getComputedStyle(wires).display === 'none') return;
+      const box = grid.getBoundingClientRect();
+      const w = win.getBoundingClientRect();
+      wires.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+      if (!wireGroups.length) {
+        cards.forEach((_, i) => {
+          const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          c.setAttribute('r', '3');
+          g.append(p, c); wires.append(g); wireGroups[i] = { g, p, c };
+        });
+      }
+      cards.forEach((card, i) => {
+        const r = card.getBoundingClientRect();
+        const sx = w.right - box.left - 6, sy = w.top - box.top + w.height * (0.22 + i * 0.11);
+        const ex = r.left - box.left, ey = r.top - box.top + r.height / 2;
+        const dx = Math.max(40, (ex - sx) * 0.55);
+        wireGroups[i].p.setAttribute('d', `M${sx.toFixed(1)} ${sy.toFixed(1)} C${(sx + dx).toFixed(1)} ${sy.toFixed(1)}, ${(ex - dx).toFixed(1)} ${ey.toFixed(1)}, ${ex.toFixed(1)} ${ey.toFixed(1)}`);
+        wireGroups[i].c.setAttribute('cx', ex.toFixed(1));
+        wireGroups[i].c.setAttribute('cy', ey.toFixed(1));
+      });
+    };
+
+    let current = -1;
+    const setActive = (i) => {
+      if (i === current) return;
+      current = i;
+      const on = (el) => el.classList.toggle('is-active', Number(el.dataset.step) === i);
+      screens.forEach(on); steps.forEach(on); cards.forEach(on); swaps.forEach(on);
+      chips.forEach(on);
+      wireGroups.forEach((g, k) => g.g.classList.toggle('is-active', k === i));
+      const tab = screens[i].dataset.tab;
+      tabs.forEach((t) => t.classList.toggle('is-active', t.dataset.tab === tab));
+      const chip = chips[i];
+      if (chip && chipsWrap && getComputedStyle(chipsWrap).display !== 'none') {
+        chipsWrap.scrollTo({ left: chip.offsetLeft - 16, behavior: reduced ? 'auto' : 'smooth' });
+      }
+    };
+
+    const travel = () => sec.getBoundingClientRect().height - stage.clientHeight;
+    const progress = () => {
+      const rect = sec.getBoundingClientRect();
+      const total = travel();
+      return total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
+    };
+    const indexAt = (p) => clamp(Math.floor(p * n), 0, n - 1);
+
+    // click a step / chip: scroll to the middle of its band
+    const goTo = (i) => {
+      const top = sec.getBoundingClientRect().top + scrollY;
+      const y = top + travel() * ((i + 0.5) / n);
+      if (lenis) lenis.scrollTo(y, { duration: 1.1 }); else scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
+    };
+    steps.forEach((li) => $('button', li).addEventListener('click', () => goTo(Number(li.dataset.step))));
+    chips.forEach((c) => c.addEventListener('click', () => goTo(Number(c.dataset.step))));
+
+    let raf = 0;
+    const loop = () => {
+      raf = requestAnimationFrame(loop);
+      const rect = sec.getBoundingClientRect();
+      if (rect.bottom < -innerHeight || rect.top > innerHeight * 2) return;
+      const p = progress();
+      setActive(indexAt(p));
+      sec.classList.toggle('is-scrolled', p > 0.06);
+    };
+
+    const layout = () => { fitWindow(); requestAnimationFrame(drawWires); };
+    layout();
+    addEventListener('resize', layout);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    setTimeout(layout, 600);
+    setActive(0);
+    raf = requestAnimationFrame(loop);
+  }
+
+  /* ------------------------------------------------------------------
      Instrument: the login-to-every-screen tour, playing while on screen
      ------------------------------------------------------------------ */
   function initInstrument() {
@@ -701,6 +804,40 @@
     $$('a', menu).forEach((a) => a.addEventListener('click', () => setOpen(false)));
     addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
     matchMedia('(min-width: 768px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
+  }
+
+  /* ------------------------------------------------------------------
+     Nav "Services" dropdown — desktop hover/click panel + mobile
+     collapsible sub-list, both keyboard and outside-click aware.
+     ------------------------------------------------------------------ */
+  function initNavDropdown() {
+    $$('.nav-drop').forEach((drop) => {
+      const btn = $('.nav-drop__btn', drop);
+      const panel = $('.nav-drop__panel', drop);
+      if (!btn || !panel) return;
+      let closeTimer = 0;
+      const setOpen = (open) => {
+        btn.setAttribute('aria-expanded', String(open));
+        panel.classList.toggle('is-open', open);
+      };
+      btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+      drop.addEventListener('pointerenter', () => { clearTimeout(closeTimer); setOpen(true); });
+      drop.addEventListener('pointerleave', () => { closeTimer = setTimeout(() => setOpen(false), 150); });
+      drop.addEventListener('focusout', (e) => { if (!drop.contains(e.relatedTarget)) setOpen(false); });
+      document.addEventListener('click', (e) => { if (!drop.contains(e.target)) setOpen(false); });
+      addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { setOpen(false); btn.focus(); }
+      });
+    });
+    $$('.mobile-menu__drop-btn').forEach((btn) => {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!panel) return;
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        panel.classList.toggle('is-open', open);
+      });
+    });
   }
 
   /* ------------------------------------------------------------------
@@ -805,8 +942,10 @@
   boot('placeholders', initPlaceholders);
   boot('work', initWork);
   boot('lab', initLab);
+  boot('workflow', initWorkflow);
   boot('instrument', initInstrument);
   boot('menu', initMenu);
+  boot('nav-dropdown', initNavDropdown);
   boot('magnetic', initMagnetic);
   boot('forms', initForms);
 })();
